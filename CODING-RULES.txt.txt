@@ -1,0 +1,20 @@
+PVR WEBSITE RULES
+
+Never delete files automatically.
+
+Always inspect the full project before editing.
+
+Keep current page structure.
+
+Keep SEO files:
+- robots.txt
+- sitemap.xml
+- .htaccess
+
+Do not break Cloudflare worker integration.
+
+Do not remove existing styling.
+
+Create backups before major changes.
+
+Explain changes before applying them.
