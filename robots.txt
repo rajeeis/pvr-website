@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pvrgroupsltd.co.uk/sitemap.xml

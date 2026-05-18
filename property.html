@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property — PVR Groups Ltd</title>
+<meta name="description" content="Premium serviced accommodation by PVR Groups Ltd. Book direct for London and Manchester serviced apartments.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#c8962a;--gold2:#dea93a;--ink:#0e0e12;--charcoal:#141419;
+  --ivory:#f8f5ef;--smoke:#f2ede6;--muted:#7a7a8e;--teal:#0f4a52;
+  --green:#0f7a55;--red:#991b1b;--border:rgba(200,150,42,.18);
+  --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ivory);color:var(--ink);padding-top:58px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:#141419;padding:.75rem 0;box-shadow:0 2px 20px rgba(0,0,0,.35)}
+.ni{max-width:1260px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nl{font-family:var(--fd);color:#fff;text-decoration:none;font-size:1.15rem;font-weight:700;line-height:1.1}
+.nl small{display:block;font-family:var(--fb);font-size:.52rem;color:var(--gold2);letter-spacing:.18em;text-transform:uppercase;margin-top:.15rem}
+.nav-actions{display:flex;align-items:center;gap:.7rem}
+.nav-link{color:rgba(255,255,255,.65);text-decoration:none;font-size:.82rem}
+.nav-link:hover{color:var(--gold2)}
+.nbk{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:.55rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.85rem;white-space:nowrap}
+.nbk:hover{opacity:.9}
+
+.hero{height:clamp(300px,46vw,560px);background:#111;position:relative;overflow:hidden}
+.slider-track{display:flex;height:100%;transition:transform .45s ease;will-change:transform}
+.slide{min-width:100%;height:100%;position:relative;background:#111}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slide:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.08) 58%,rgba(0,0,0,.18));pointer-events:none}
+.hero-title{position:absolute;left:1.5rem;right:1.5rem;bottom:1.5rem;color:#fff;z-index:5;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:.35rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;border-radius:50px;padding:.32rem .85rem;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.65rem}
+.hero-title h1{font-family:var(--fd);font-size:clamp(1.55rem,3.2vw,2.8rem);line-height:1.05;text-shadow:0 3px 18px rgba(0,0,0,.5)}
+.hero-title p{color:rgba(255,255,255,.82);margin-top:.55rem;font-size:.95rem;max-width:650px;line-height:1.55}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.92);cursor:pointer;font-size:1.4rem;box-shadow:0 4px 16px rgba(0,0,0,.24)}
+.arrow:hover{background:#fff}
+.prev{left:1rem}.next{right:1rem}
+.dots{position:absolute;bottom:1rem;right:1.25rem;display:flex;gap:.35rem;z-index:10}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);border:0;cursor:pointer}.dot.active{background:#fff;transform:scale(1.25)}
+
+.pw{max-width:1260px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.pl{display:grid;grid-template-columns:1fr 370px;gap:2.5rem;align-items:start}
+.sticky{position:sticky;top:78px}
+.ph1{font-family:var(--fd);font-size:clamp(1.7rem,2.7vw,2.35rem);line-height:1.15;margin-bottom:.4rem;color:var(--ink)}
+.meta{color:var(--muted);margin-bottom:1rem;line-height:1.6}
+.quick-strip{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem}
+.quick-pill{background:#fff;border:1px solid var(--border);border-radius:50px;padding:.42rem .85rem;font-size:.78rem;color:var(--teal);font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+.section{background:#fff;border-radius:14px;padding:1.35rem;box-shadow:0 8px 30px rgba(0,0,0,.07);border:1px solid rgba(200,150,42,.10);margin-bottom:1.15rem}
+.section h2,.section h3{font-family:var(--fd);font-size:1.35rem;margin-bottom:.8rem;color:var(--ink)}
+.desc{line-height:1.8;color:#333;white-space:pre-line;font-size:.94rem}
+.lead{font-size:1rem;line-height:1.8;color:#2d2d36;white-space:pre-line}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem;margin-top:1rem}
+.feature-card{background:linear-gradient(180deg,#fff,var(--smoke));border:1px solid rgba(200,150,42,.16);border-radius:12px;padding:1rem;box-shadow:0 7px 20px rgba(0,0,0,.045)}
+.feature-card .ico{font-size:1.45rem;margin-bottom:.45rem}
+.feature-card h4{font-size:.92rem;margin-bottom:.3rem;color:var(--ink)}
+.feature-card p{font-size:.82rem;color:#555;line-height:1.6}
+.highlight-box{background:linear-gradient(135deg,rgba(200,150,42,.12),rgba(15,74,82,.06));border:1px solid rgba(200,150,42,.22);border-left:4px solid var(--gold);border-radius:12px;padding:1rem;margin:1rem 0;color:#333;line-height:1.7}
+.highlight-box strong{color:var(--ink)}
+.two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:.8rem}
+.info-box{background:var(--smoke);border-radius:12px;padding:1rem;border:1px solid rgba(0,0,0,.04)}
+.info-box h4{font-size:.92rem;margin-bottom:.4rem;color:var(--teal)}
+.info-box p,.info-box li{font-size:.84rem;color:#444;line-height:1.65}
+ul.clean{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+ul.clean li{padding-left:1.25rem;position:relative}ul.clean li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:900}
+.amenities{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:.55rem;margin-top:1rem}
+.amenity{background:var(--smoke);padding:.7rem .8rem;border-radius:9px;font-size:.85rem;border:1px solid rgba(15,74,82,.08);font-weight:600;color:#333}
+.card{background:#fff;border-radius:14px;padding:1.25rem;box-shadow:0 8px 30px rgba(0,0,0,.08);border:1px solid rgba(200,150,42,.12)}
+.bkp{font-family:var(--fd);font-size:2.1rem;color:var(--gold);line-height:1}.bkp small{font-family:var(--fb);font-size:.78rem;color:var(--muted);font-weight:500;margin-left:.25rem}
+.book-note{font-size:.75rem;color:var(--muted);line-height:1.55;margin-top:.35rem;margin-bottom:1rem}
+.bkbtn{width:100%;margin-top:.3rem;padding:.92rem;border:0;border-radius:7px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-weight:800;cursor:pointer;font-size:.9rem;box-shadow:0 4px 18px rgba(200,150,42,.24)}
+.bkbtn:hover{opacity:.92;transform:translateY(-1px)}
+label{display:block;font-size:.64rem;text-transform:uppercase;letter-spacing:.15em;font-weight:800;color:var(--muted);margin-bottom:.3rem}
+input,select{width:100%;padding:.75rem;margin-bottom:.8rem;border:1px solid #ddd;border-radius:7px;background:#fafafa;font-family:var(--fb);font-size:.9rem}
+input:focus,select:focus{outline:none;border-color:var(--gold);background:#fff}
+.calbox{background:#fff;border-radius:12px;border:1px solid #e2ddd6;overflow:hidden;margin-top:1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.calhd{background:var(--charcoal);padding:.8rem 1rem;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+.calhd h4{font-size:.95rem;font-weight:700;margin:0;text-align:center;flex:1}.calnav{background:rgba(255,255,255,.1);border:0;color:#fff;border-radius:6px;width:32px;height:30px;cursor:pointer;font-size:1rem}.calnav:hover{background:rgba(255,255,255,.2)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);padding:10px;text-align:center;font-size:.78rem}
+.cal-head{font-weight:800;color:var(--muted);padding:8px 0;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em}
+.cal-day{min-height:58px;padding:7px 3px;border:1px solid #f0f0f0;position:relative;background:#fff;border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.cal-price{display:block;font-size:.62rem;color:var(--gold);font-weight:800;margin-top:2px}.is-booked{background:#fee2e2;color:var(--red);text-decoration:line-through;opacity:.82}.is-booked:after{content:"Booked";display:block;font-size:.52rem;text-decoration:none;margin-top:1px;color:var(--red);font-weight:700}.is-past{color:#bbb;background:#f8f8f8}.is-open{cursor:pointer}.is-open:hover{background:rgba(200,150,42,.12);border-color:rgba(200,150,42,.25)}.is-selected{background:var(--gold)!important;color:#fff!important}.is-selected .cal-price{color:#fff}.is-range{background:rgba(200,150,42,.12)}
+.status{font-size:.78rem;color:var(--muted);text-align:center;padding:.75rem;line-height:1.5;border-top:1px solid #eee}.legend{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;font-size:.7rem;color:var(--muted);padding:.1rem .8rem .8rem}.legend span{display:flex;align-items:center;gap:.3rem}.legend i{width:9px;height:9px;border-radius:2px;display:inline-block}.l-open{background:#fff;border:1px solid #ddd}.l-booked{background:#fee2e2;border:1px solid #ef4444}.l-selected{background:var(--gold)}
+.contact-box{margin-top:1rem;background:var(--charcoal);color:#fff;border-radius:12px;padding:1rem;text-align:center}.contact-box p{font-size:.78rem;color:rgba(255,255,255,.58);margin-bottom:.75rem}.contact-actions{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.contact-actions a{display:block;text-decoration:none;border-radius:7px;padding:.55rem;font-size:.78rem;font-weight:800}.wa{background:#25d366;color:#fff}.email{background:#fff;color:var(--ink)}
+footer{background:#141419;color:rgba(255,255,255,.45);padding:1.5rem;text-align:center;font-size:.78rem}
+@media(max-width:900px){.pl{grid-template-columns:1fr}.sticky{position:static}.two-col{grid-template-columns:1fr}.nav-link{display:none}.hero-title{left:1rem;right:1rem}.pw{padding:1.4rem 1rem 3rem}.contact-actions{grid-template-columns:1fr}}
+@media(max-width:520px){.feature-grid{grid-template-columns:1fr}.amenities{grid-template-columns:1fr}.cal-day{min-height:48px;font-size:.72rem}.arrow{width:36px;height:36px}.nbk{padding:.48rem .75rem}}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="ni">
+    <a href="index.html" class="nl">PVR Groups Ltd<small>Luxury Serviced Accommodation</small></a>
+    <div class="nav-actions">
+      <a href="index.html#stays" class="nav-link">← All Properties</a>
+      <a href="https://pvrgroupsltd.bookeddirectly.host/" target="_blank" rel="noopener" class="nbk">Book Direct</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="slider-track" id="sliderTrack"></div>
+  <button class="arrow prev" id="prevBtn" aria-label="Previous image">‹</button>
+  <button class="arrow next" id="nextBtn" aria-label="Next image">›</button>
+  <div class="dots" id="dots"></div>
+  <div class="hero-title">
+    <div class="hero-badge" id="heroBadge">Premium Stay</div>
+    <h1 id="heroTitle">Loading property...</h1>
+    <p id="heroLoc"></p>
+  </div>
+</div>
+
+<main class="pw">
+  <div class="pl">
+    <section>
+      <h1 class="ph1" id="propName"></h1>
+      <p class="meta" id="propMeta"></p>
+      <div class="quick-strip" id="quickStrip"></div>
+
+      <div class="section">
+        <h2>About This Space</h2>
+        <p class="lead" id="aboutText"></p>
+        <div class="highlight-box" id="topHighlight"></div>
+      </div>
+
+      <div class="section">
+        <h2>What You’ll Love</h2>
+        <div class="feature-grid" id="featureGrid"></div>
+      </div>
+
+      <div class="section">
+        <h2>The Space</h2>
+        <p class="desc" id="spaceText"></p>
+      </div>
+
+      <div class="section">
+        <h2>Guest Access</h2>
+        <div class="two-col" id="guestAccessBoxes"></div>
+      </div>
+
+      <div class="section">
+        <h2>Things to Note</h2>
+        <div class="feature-grid" id="notesGrid"></div>
+      </div>
+
+      <div class="section">
+        <h2>Amenities & Facilities</h2>
+        <div class="amenities" id="amenities"></div>
+      </div>
+    </section>
+
+    <aside class="sticky">
+      <div class="card">
+        <div class="bkp" id="priceBox">See live price</div>
+        <p class="book-note">Book direct for the best available rate, secure payment and priority guest support.</p>
+
+        <label for="checkIn">Check-in</label>
+        <input type="date" id="checkIn">
+
+        <label for="checkOut">Check-out</label>
+        <input type="date" id="checkOut">
+
+        <label for="guests">Guests</label>
+        <select id="guests"></select>
+
+        <button class="bkbtn" id="bookBtn">Check Availability →</button>
+      </div>
+
+      <div class="calbox">
+        <div class="calhd">
+          <button class="calnav" id="calPrev" aria-label="Previous month">‹</button>
+          <h4 id="monthDisplay">Loading calendar...</h4>
+          <button class="calnav" id="calNext" aria-label="Next month">›</button>
+        </div>
+        <div class="cal-grid" id="calendarGrid"></div>
+        <div class="legend"><span><i class="l-open"></i>Available</span><span><i class="l-booked"></i>Booked</span><span><i class="l-selected"></i>Selected</span></div>
+        <div class="status" id="syncStatus">Syncing live availability...</div>
+      </div>
+
+      <div class="contact-box">
+        <p>Need help before booking? Speak directly with PVR Groups Ltd.</p>
+        <div class="contact-actions">
+          <a class="wa" href="https://wa.me/447459150439?text=Hello%20PVR%20Groups%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="email" href="mailto:contact@pvrgroupsltd.co.uk">Email</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>© <span id="year"></span> PVR Groups Ltd. Premium serviced accommodation across London & Manchester.</footer>
+
+<script>
+const CFG = {
+  PROXY: "https://pvr-uplisting-proxy.shop-cdb.workers.dev",
+  BOOKING: "https://pvrgroupsltd.bookeddirectly.host"
+};
+
+const PROPS = [
+  {
+    id:"flat-308-e14",
+    uid:"172979",
+    slug:"12edc0",
+    badge:"Canary Wharf · Riverside Stay",
+    name:"Modern Riverside 1BR · Balcony",
+    full:"Modern Riverside 1BR • Balcony • Canary Wharf",
+    loc:"Canary Wharf, East London",
+    guests:3,
+    quick:["💼 Weekly & Monthly Discounts","📶 Ultra-Fast Wi-Fi","🌿 Private Balcony","🔑 KeyNest Self Check-in","🧹 Hotel-Style Cleaning","💳 £150 Deposit"],
+    about:`Secure a stylish riverside stay near Canary Wharf — highly suited for professionals, contractors and couples seeking comfort, privacy and easy access to the city.
+
+Fast Wi-Fi, private balcony and smooth self check-in.
+
+Professionally cleaned, fully prepared and managed by PVR Groups Ltd.`,
+    highlight:`💼 Weekly & monthly discounts available — ideal for longer work stays. Reserve directly with PVR Groups Ltd to enjoy exclusive rates, priority guest support and a seamless Canary Wharf experience tailored to modern travellers.`,
+    space:`Welcome to your riverside retreat in East London – thoughtfully designed for business travellers, contractors and couples. This bright, modern apartment offers hotel-quality comfort with the privacy and freedom of your own stylish space.
+
+🚆 Fast Transport Links
+• 11 mins to Bank via DLR — ideal for City professionals
+• 5–10 mins to The O2 Arena via Jubilee Line — concerts, events & entertainment
+• 9–13 mins to ExCeL London via DLR — conferences & exhibitions
+• Quick links to London Bridge, Westminster, Stratford and London City Airport
+
+📍 Prime Canary Wharf Location
+• Walk to Canary Wharf shops, cafés, bars & restaurants
+• Steps from the Thames Path for riverside walks
+• Close to Crossrail Place Roof Garden, Museum of London Docklands and stunning dockside views
+
+Perfect for business travellers, couples, relocators, weekend explorers and romantic riverside escapes.`,
+    features:[
+      ["🛏️","Spacious Double Bedroom","Tastefully decorated with premium bedding, ideal for proper rest after a long day."],
+      ["🚿","Modern Bathroom","Sleek finishes with fresh towels and essential toiletries prepared for each stay."],
+      ["🛋️","Open-Plan Living Area","Comfortable sofa, Smart TV and elegant dining space for relaxing or hosting guests."],
+      ["❄️","Portable Air Conditioning","Easy-to-use A/C units to help you stay cool and comfortable."],
+      ["🍽️","Fully Equipped Kitchen","Modern appliances and cooking essentials for home-style meals or quick bites."],
+      ["📶","Ultra-Fast Wi-Fi","Reliable high-speed internet throughout the flat for work and streaming."],
+      ["🅿️","Nearby Parking Options","Street or paid parking available just a short walk away."],
+      ["🌆","Everything Within Reach","Shops, cafés, restaurants, river walks and major London links nearby."]
+    ],
+    access:[
+      ["Private Apartment Access","Guests have full private access to the apartment, including bedroom, bathroom, kitchen, living area and balcony."],
+      ["Communal Areas","Guests may use communal areas such as the entrance lobby and lifts. This is a fully private unit with no shared living spaces."],
+      ["KeyNest Collection","Self check-in via nearby KeyNest. Keys collected securely: Mon–Sat 6am–11pm | Sun 9am–11pm."],
+      ["Check-in Support","Full check-in instructions are sent before arrival for a smooth and secure arrival experience."]
+    ],
+    notes:[
+      ["🧹","Professional Cleaning","Professionally cleaned before each stay with fresh hotel-style linen and towels provided."],
+      ["🕒","Check-In / Check-Out","Check-in from 3 PM and check-out by 10 AM. Early check-in or late check-out may be available on request."],
+      ["💳","Security Deposit","A refundable £150 security deposit is required before arrival and returned within 7 days subject to inspection."],
+      ["🗝️","Lost Key Fee","A £100 fee applies for any lost keys or fobs, deductible from the deposit."],
+      ["📦","Long Stays Welcome","Ideal for business professionals, NHS staff, relocators and extended London visits."],
+      ["🤫","Quiet Hours & Conduct","No parties or loud noise. Quiet hours begin at 10 PM. Disturbance fees of up to £150 may apply."],
+      ["💡","Ongoing Development","The apartment is in a new-build area. Minor daytime construction may occasionally take place nearby."],
+      ["🚭","House Rules","No smoking inside the apartment. Please treat the property and neighbours with respect."]
+    ],
+    am:["🍳 Full Kitchen","📶 Ultra-Fast Wi-Fi","📺 Smart TV","🌿 Private Balcony","❄️ Portable Air Conditioning","🧺 Washing Machine","💨 Clothes Dryer","🛗 Lift Access","🔑 KeyNest Self Check-in","🛏️ Hotel-Style Linen & Towels","🪮 Hair Dryer","👕 Iron & Board","🔥 Smoke Detector","🔕 Carbon Monoxide Detector","🅿️ Nearby Parking Options"],
+    photos:[
+      "https://djts5lg061pqs.cloudfront.net/8fafac82-b73f-485b-b6f2-5faafe26042f.png?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/6dc845b8-f189-4518-a0d9-296813a713ff.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/48d1fba1-e654-417a-9740-663467c437ec.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/bf2ea91e-404e-44dd-a243-591827d94062.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/b2f68781-0ea9-415e-9fbd-8919511fccc7.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/4b17dd72-e79c-4ba0-871f-37773342b634.jpg?width=1200"
+    ]
+  },
+  {
+    id:"old-trafford-2br",
+    uid:"195566",
+    slug:"2e1725",
+    badge:"Manchester · Free Parking",
+    name:"Stylish 2BR · Free Parking",
+    full:"Stylish 2BR Apartment Near Old Trafford",
+    loc:"Old Trafford, Manchester",
+    guests:8,
+    quick:["🚗 Free Private Parking","⚽ Walk to Old Trafford","📶 Fast Wi-Fi","🔐 Lockbox Self Check-in","💼 Weekly & Monthly Discounts","🧹 Hotel-Standard Cleaning"],
+    about:`Ideal for weekly stays and business travellers working in Manchester.
+
+Perfect for contractors, business travellers and football fans visiting Old Trafford. The apartment offers fast Wi-Fi, a comfortable workspace and easy transport links to Manchester city centre, MediaCityUK and Trafford Park business district.
+
+Spacious, fully furnished and professionally managed by PVR Groups Ltd.`,
+    highlight:`➕ Weekly & monthly discounts for longer stays. A practical, comfortable Manchester base with free private parking, strong transport links and space for families, groups, contractors and corporate guests.`,
+    space:`This modern ground-floor apartment is designed for comfort, convenience and flexible Manchester stays.
+
+Perfect For:
+✔ Families & groups needing space and comfort
+✔ Contractors working in Manchester
+✔ Business travellers looking for convenience
+✔ NHS staff seeking a calm, well-equipped base
+✔ Football fans wanting to walk to Old Trafford
+
+💎 Managed by PVR Groups Ltd
+Professionally managed with hotel-standard cleaning, reliable communication and a strong commitment to quality.
+
+Book your stay today and enjoy comfort, convenience and a true home-away-from-home in Manchester.`,
+    features:[
+      ["🛌","Spacious 2 Bedrooms","Comfortable beds with quality bedding for a great night’s sleep."],
+      ["🛁","Modern Bathroom","Fresh towels and essentials provided, cleaned professionally before every stay."],
+      ["🛋️","Bright Living Space","Smart TV, cosy sofa bed and dining area — ideal for relaxing or working."],
+      ["🍳","Fully Equipped Kitchen","Cook freely with appliances, cookware, utensils and essentials supplied."],
+      ["📶","Fast & Reliable Wi-Fi","Perfect for remote work, streaming and business trips."],
+      ["🚗","Free Dedicated Parking","Secure, hassle-free private parking right outside."],
+      ["⚽","Walk to Old Trafford Stadium","Ideal base for match days, events and exploring Manchester."],
+      ["🔐","Easy Self Check-In","Secure lockbox for flexible arrival times."]
+    ],
+    access:[
+      ["Private Flat Access","Guests have full private access to the flat, including bedrooms, bathroom, living space and kitchen."],
+      ["Dedicated Parking","A dedicated parking space is included for secure, hassle-free parking."],
+      ["Communal Areas","Guests may use communal areas such as the entrance lobby and lifts where applicable."],
+      ["No Shared Spaces","This is a fully private unit — guests do not share any living spaces with others."]
+    ],
+    notes:[
+      ["🧹","Professional Cleaning","The flat is thoroughly cleaned before each stay, with fresh hotel-style linen and towels provided."],
+      ["🕒","Check-In / Check-Out","Check-in from 3 PM and check-out by 10 AM. Early check-in or late check-out may be available on request."],
+      ["💳","Security Deposit","A refundable £150 security deposit is required before arrival and returned within 7 days subject to inspection."],
+      ["🗝️","Lost Key Fee","A £100 fee applies for any lost keys or fobs, deductible from the deposit."],
+      ["📦","Long Stays Welcome","Ideal for business professionals, NHS staff, contractors, football fans and extended Manchester visits."],
+      ["🤫","Quiet Hours & Conduct","No parties or loud noise. Quiet hours begin at 10 PM. Disturbance fees up to £150 may apply."],
+      ["⏰","Late Checkout Fee","Late check-out after 10:20 AM without prior notice may incur an £85 fee."],
+      ["🚭","House Rules","Please respect neighbours and treat the home with care throughout your stay."]
+    ],
+    am:["🚗 Free Dedicated Parking","📶 Fast Wi-Fi","📺 Smart TV","🍳 Fully Equipped Kitchen","🧺 Washing Machine","🛏️ Hotel-Style Linen & Towels","👕 Iron & Board","💨 Hair Dryer","🛋️ Sofa Bed","🔑 Lockbox Self Check-in","🧹 Professional Cleaning","🔥 Smoke Detector","⚽ Walk to Old Trafford","💼 Workspace Friendly","📦 Long Stays Welcome"],
+    photos:[
+      "https://djts5lg061pqs.cloudfront.net/73be506d-8b70-4fe3-b10a-9df61ec992c1.png?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/3fab2b75-82b6-4727-b60a-ac9b8f7591a4.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/badc9c3d-9eff-465c-9671-9de6d21165c6.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/a07a0e70-087b-4434-ba16-6af26bb47a86.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/d2ba39a7-4f14-45f6-82c7-e3b64e466af9.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/9cc22d2b-4268-4de2-b5d7-92756839c198.jpg?width=1200"
+    ]
+  },
+  {
+    id:"castlefield-canal",
+    uid:"255289",
+    slug:"e8f52c",
+    badge:"Castlefield · Private Balcony ",
+    name:"Canal-Side 1BR · Private Balcony ",
+    full:"Canal-Side Apartment with Private Balcony ",
+    loc:"Castlefield, Manchester",
+    guests:3,
+    quick:["🌿 Private Balcony ","💼 Dedicated Workspace","📶 Fast Wi-Fi","🔑 KeyNest Self Check-in","🍽️ Full Kitchen","📦 Long Stays Welcome"],
+    about:`Modern canal-side apartment in Castlefield with a private Balcony , perfect for relaxing after a day in the city.
+
+This stylish 1-bedroom space features fast WiFi, a fully equipped kitchen and a bright open-plan living area.
+
+Ideal for business travellers, couples and longer stays, with easy access to the city centre and MediaCity.
+
+Professionally managed for a smooth, comfortable experience.`,
+    highlight:`A stylish Castlefield stay with private Balcony , dedicated workspace, fast Wi-Fi and excellent access to Manchester city centre, Deansgate, MediaCity, universities and Old Trafford.`,
+    space:`✨ A stylish and beautifully presented 1-bedroom canal-side apartment designed for comfort, convenience and a premium city stay. The property features a comfortable double bedroom, modern bathroom and a bright open-plan living and dining area with elegant furnishings, creating a welcoming space to relax or work.
+
+💼 A dedicated workspace has been thoughtfully added, including a work desk ideal for laptops, along with extension leads and surge protection to safely connect multiple devices — perfect for remote working, business travellers and longer stays.
+
+🍽️ The fully equipped kitchen is ideal for home cooking, business stays or extended visits, with everything needed for a seamless stay.
+
+🌿 Step outside onto your private Balcony  — a peaceful outdoor space perfect for morning coffee, evening drinks or unwinding after a busy day in the city.
+
+📶 Fast WiFi and Smart TV make the apartment perfect for both business and leisure guests.
+
+📍 Located in sought-after Castlefield, you’ll be close to Manchester city centre, Deansgate, MediaCity, universities and Old Trafford, with excellent transport links nearby.
+
+🧹 Professionally cleaned and managed to high standards, ensuring a smooth, comfortable and enjoyable experience from check-in to check-out.`,
+    features:[
+      ["🌿","Private Balcony ","A peaceful outdoor space for morning coffee, evening drinks or relaxing after a busy day."],
+      ["💼","Dedicated Workspace","Work desk with extension leads and surge protection for remote work and business stays."],
+      ["🛏️","Comfortable Double Bedroom","A well-presented bedroom designed for rest and comfort."],
+      ["🚿","Modern Bathroom","Clean, modern bathroom with hotel-style linen and towels provided."],
+      ["🍽️","Fully Equipped Kitchen","Ideal for home cooking, business stays and extended visits."],
+      ["📶","Fast Wi-Fi","Reliable internet for work, streaming and everyday use."],
+      ["📺","Smart TV","Perfect for relaxing after work or exploring Manchester."],
+      ["📍","Prime Castlefield Location","Close to Deansgate, MediaCity, universities, Old Trafford and city centre links."]
+    ],
+    access:[
+      ["Entire Apartment","Guests have private access to the full apartment, including bedroom, bathroom, living area, kitchen and Balcony ."],
+      ["Private Balcony ","The Balcony  is exclusively for guest use, offering comfort, privacy and flexibility throughout your stay."],
+      ["KeyNest Collection","Keys are collected via secure KeyNest collection just a short distance from the apartment."],
+      ["KeyNest Hours","Mon–Thu: 07:00–22:30 | Fri: 07:00–23:00 | Sat–Sun: 07:30–23:00. Full check-in instructions sent before arrival."]
+    ],
+    notes:[
+      ["🧹","Professional Cleaning","Thoroughly cleaned before each stay, with fresh hotel-style linen and towels provided."],
+      ["🕒","Check-In / Check-Out","Check-in from 3 PM and check-out by 10 AM. Early or late check-out may be available on request."],
+      ["💳","Security Deposit","A refundable £150 security deposit may be required before arrival and returned subject to inspection."],
+      ["🗝️","Key Collection","Self check-in via secure KeyNest collection point. Full collection details are sent before arrival."],
+      ["📦","Long Stays Welcome","Ideal for business travellers, NHS staff, contractors, couples and extended Manchester visits."],
+      ["🤫","Quiet Hours & Conduct","No parties or loud noise. Quiet hours begin at 10 PM to respect neighbours."],
+      ["🚭","House Rules","No smoking inside the apartment. Please treat the property with care and respect."],
+      ["📩","Support During Stay","If you need any assistance, we’re only a message away and happy to help."]
+    ],
+    am:["🌿 Private Balcony ","💼 Dedicated Workspace","📶 Fast Wi-Fi","📺 Smart TV","🍳 Fully Equipped Kitchen","🛁 Bath & Shower","🧺 Washing Machine","🛏️ Hotel-Style Linen & Towels","🔑 KeyNest Self Check-in","🧹 Professional Cleaning","🔥 Smoke Detector","🔕 Carbon Monoxide Detector","🧯 Fire Extinguisher","📦 Long Stays Welcome","🍽️ Dining Area"],
+    photos:[
+      "https://djts5lg061pqs.cloudfront.net/bcc5e418-d5a8-4650-a269-d2a4b18102e7.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/57108d69-0fe1-440f-bcb1-87bf009f1a01.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/6a85f32d-83be-4373-bd47-b53451e30866.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/146850f2-c81c-4217-bfb6-187257dbf2c6.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/7e6e820c-7fd5-46b5-b272-a35ba76992d1.jpg?width=1200",
+      "https://djts5lg061pqs.cloudfront.net/c5472470-5947-461b-98c8-27a1daa45d01.jpg?width=1200"
+    ]
+  }
+];
+
+const params = new URLSearchParams(window.location.search);
+const rawId = (params.get("id") || params.get("slug") || params.get("property") || "").trim().toLowerCase();
+const P = PROPS.find(p => p.id === rawId || p.slug === rawId || p.uid === rawId) || PROPS[0];
+
+let calData = [];
+let lowestRate = null;
+let slideIndex = 0;
+let viewDate = new Date();
+viewDate.setDate(1);
+
+function esc(s){
+  return String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+}
+
+function initPage(){
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.title = P.full + " — PVR Groups Ltd";
+  document.getElementById("heroBadge").textContent = P.badge;
+  document.getElementById("heroTitle").textContent = P.full;
+  document.getElementById("heroLoc").textContent = "📍 " + P.loc + " · Up to " + P.guests + " guests";
+  document.getElementById("propName").textContent = P.name;
+  document.getElementById("propMeta").textContent = "📍 " + P.loc + " · Up to " + P.guests + " guests · Professionally managed by PVR Groups Ltd";
+  document.getElementById("aboutText").textContent = P.about;
+  document.getElementById("topHighlight").innerHTML = esc(P.highlight);
+  document.getElementById("spaceText").textContent = P.space;
+
+  document.getElementById("quickStrip").innerHTML = P.quick.map(q => `<div class="quick-pill">${esc(q)}</div>`).join("");
+  document.getElementById("featureGrid").innerHTML = P.features.map(f => featureCard(f)).join("");
+  document.getElementById("notesGrid").innerHTML = P.notes.map(f => featureCard(f)).join("");
+  document.getElementById("guestAccessBoxes").innerHTML = P.access.map(a => `<div class="info-box"><h4>${esc(a[0])}</h4><p>${esc(a[1])}</p></div>`).join("");
+  document.getElementById("amenities").innerHTML = P.am.map(a => `<div class="amenity">${esc(a)}</div>`).join("");
+
+  document.getElementById("guests").innerHTML = Array.from({length:P.guests}, (_,i) => `<option value="${i+1}">${i+1} Guest${i ? "s" : ""}</option>`).join("");
+  document.getElementById("sliderTrack").innerHTML = P.photos.map((u,i) => `<div class="slide"><img src="${esc(u)}" alt="${esc(P.name)} photo ${i+1}" ${i ? 'loading="lazy"' : ''}></div>`).join("");
+  document.getElementById("dots").innerHTML = P.photos.map((_,i) => `<button class="dot${i===0?' active':''}" data-i="${i}" aria-label="Photo ${i+1}"></button>`).join("");
+
+  initSlider();
+  initBooking();
+  initCalendarControls();
+  renderCalendar();
+  fetchCalendar();
+}
+
+function featureCard(f){
+  return `<div class="feature-card"><div class="ico">${esc(f[0])}</div><h4>${esc(f[1])}</h4><p>${esc(f[2])}</p></div>`;
+}
+
+function initSlider(){
+  const track = document.getElementById("sliderTrack");
+  const dots = Array.from(document.querySelectorAll(".dot"));
+  const total = P.photos.length;
+  function showSlide(){
+    track.style.transform = `translateX(-${slideIndex * 100}%)`;
+    dots.forEach((d,i) => d.classList.toggle("active", i === slideIndex));
+  }
+  document.getElementById("prevBtn").onclick = () => { slideIndex = (slideIndex - 1 + total) % total; showSlide(); };
+  document.getElementById("nextBtn").onclick = () => { slideIndex = (slideIndex + 1) % total; showSlide(); };
+  dots.forEach(d => d.onclick = () => { slideIndex = Number(d.dataset.i); showSlide(); });
+  setInterval(() => { slideIndex = (slideIndex + 1) % total; showSlide(); }, 6000);
+}
+
+function initBooking(){
+  const checkIn = document.getElementById("checkIn");
+  const checkOut = document.getElementById("checkOut");
+  const guests = document.getElementById("guests");
+  const bookBtn = document.getElementById("bookBtn");
+  const today = new Date().toISOString().split("T")[0];
+  checkIn.min = today;
+  checkOut.min = today;
+
+  checkIn.onchange = () => {
+    if(!checkIn.value) return;
+    const d = new Date(checkIn.value);
+    d.setDate(d.getDate() + 1);
+    checkOut.min = d.toISOString().split("T")[0];
+    if(checkOut.value && checkOut.value <= checkIn.value) checkOut.value = "";
+    renderCalendar();
+  };
+  checkOut.onchange = renderCalendar;
+
+  bookBtn.onclick = () => {
+    if(!checkIn.value || !checkOut.value){
+      alert("Please select check-in and check-out dates first.");
+      return;
+    }
+    const qs = new URLSearchParams({
+      check_in: checkIn.value,
+      check_out: checkOut.value,
+      number_of_guests: guests.value,
+      property_slug: P.slug
+    });
+    window.open(`${CFG.BOOKING}/?${qs.toString()}`, "_blank");
+  };
+}
+
+function initCalendarControls(){
+  document.getElementById("calPrev").onclick = () => {
+    viewDate.setMonth(viewDate.getMonth() - 1);
+    renderCalendar();
+  };
+  document.getElementById("calNext").onclick = () => {
+    viewDate.setMonth(viewDate.getMonth() + 1);
+    renderCalendar();
+  };
+}
+
+function renderCalendar(){
+  const grid = document.getElementById("calendarGrid");
+  const monthDisplay = document.getElementById("monthDisplay");
+  const checkIn = document.getElementById("checkIn")?.value || "";
+  const checkOut = document.getElementById("checkOut")?.value || "";
+  grid.innerHTML = "";
+
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
+  monthDisplay.textContent = viewDate.toLocaleString("default", { month:"long", year:"numeric" });
+
+  ["Mo","Tu","We","Th","Fr","Sa","Su"].forEach(d => grid.innerHTML += `<div class="cal-head">${d}</div>`);
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const offset = firstDay === 0 ? 6 : firstDay - 1;
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  for(let i = 0; i < offset; i++) grid.innerHTML += `<div></div>`;
+
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  for(let i = 1; i <= daysInMonth; i++){
+    const date = `${year}-${String(month+1).padStart(2,"0")}-${String(i).padStart(2,"0")}`;
+    const dayDate = new Date(year, month, i);
+    const rec = calData.find(d => d.date === date);
+    let cls = "cal-day";
+    let price = "";
+
+    if(dayDate < today) cls += " is-past";
+    else cls += " is-open";
+
+    if(rec){
+      if(rec.available === false || Number(rec.available_count || 0) === 0) cls += " is-booked";
+      if(rec.day_rate && Number(rec.day_rate) > 0) price = `<span class="cal-price">£${Math.round(rec.day_rate)}</span>`;
+    }
+    if(date === checkIn || date === checkOut) cls += " is-selected";
+    else if(checkIn && checkOut && date > checkIn && date < checkOut) cls += " is-range";
+
+    grid.innerHTML += `<div class="${cls}" data-date="${date}">${i}${price}</div>`;
+  }
+
+  grid.querySelectorAll(".cal-day.is-open:not(.is-booked)").forEach(cell => {
+    cell.onclick = () => {
+      const ci = document.getElementById("checkIn");
+      const co = document.getElementById("checkOut");
+      const ds = cell.dataset.date;
+      if(!ci.value || (ci.value && co.value)){
+        ci.value = ds;
+        co.value = "";
+      } else if(ds > ci.value){
+        co.value = ds;
+      } else {
+        ci.value = ds;
+        co.value = "";
+      }
+      ci.dispatchEvent(new Event("change"));
+      renderCalendar();
+    };
+  });
+}
+
+async function fetchCalendar(){
+  const now = new Date();
+  const end = new Date();
+  end.setDate(now.getDate() + 180);
+  const fmt = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  const fromDate = fmt(now);
+  const toDate = fmt(end);
+  const calUrl = `${CFG.PROXY}/calendar/${P.uid}?from=${fromDate}&to=${toDate}`;
+
+  try{
+    const res = await fetch(calUrl, { method:"GET", headers:{ "Accept":"application/json" }});
+    if(!res.ok) throw new Error("Worker returned " + res.status);
+    const data = await res.json();
+    calData = data?.calendar?.days || [];
+
+    const rates = calData
+      .filter(d => d.available === true && Number(d.available_count || 0) > 0 && Number(d.day_rate || 0) > 0)
+      .map(d => Number(d.day_rate));
+
+    if(rates.length){
+      lowestRate = Math.round(Math.min(...rates));
+      document.getElementById("priceBox").innerHTML = `From £${lowestRate}<small>/night</small>`;
+    } else {
+      document.getElementById("priceBox").innerHTML = `See live price`;
+    }
+
+    document.getElementById("syncStatus").textContent = "Live availability synced successfully.";
+    renderCalendar();
+  }catch(err){
+    console.error(err);
+    document.getElementById("syncStatus").textContent = "Live availability failed. Please use Book Direct to check final dates.";
+  }
+}
+
+window.addEventListener("DOMContentLoaded", initPage);
+</script>
+<script src="/script.js"></script>
+</body>
+</html>

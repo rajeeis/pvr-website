@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Lets for Estate Agents | PVR Groups Ltd</title>
+<meta name="description" content="Professional company let partnerships for estate agents. PVR Groups Ltd works with agents to provide stable long-term rental solutions, corporate accommodation and responsible property care.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pvrgroupsltd.co.uk/services/guaranteed-rent.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#c8962a;
+  --gold2:#dea93a;
+  --ink:#0e0e12;
+  --charcoal:#141419;
+  --ivory:#f8f5ef;
+  --smoke:#f2ede6;
+  --teal:#0f4a52;
+  --muted:#747484;
+  --border:rgba(200,150,42,.22);
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ivory);color:var(--ink);line-height:1.72}
+a{color:inherit}
+.c{max-width:1160px;margin:0 auto;padding:0 1.5rem}
+nav{position:sticky;top:0;z-index:50;background:rgba(20,20,25,.98);padding:.95rem 0;box-shadow:0 2px 20px rgba(0,0,0,.25)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.logo{font-family:var(--fd);color:#fff;text-decoration:none;font-size:1.2rem;font-weight:700;line-height:1.1}
+.logo small{display:block;font-size:.52rem;color:var(--gold2);font-family:var(--fb);letter-spacing:.16em;text-transform:uppercase;margin-top:.2rem}
+.navlinks{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.navlinks a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem}
+.navlinks a:hover{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;text-decoration:none;padding:.84rem 1.25rem;border-radius:8px;font-weight:700;border:none;cursor:pointer;transition:.2s ease}
+.btn:hover{transform:translateY(-1px);opacity:.94}
+.btn.dark{background:#141419}
+.btn.outline{background:transparent;border:1px solid rgba(255,255,255,.25)}
+.btn.light-outline{background:transparent;border:1px solid rgba(14,14,18,.16);color:var(--ink)}
+.hero{background:radial-gradient(circle at top right,rgba(200,150,42,.22),transparent 30%),linear-gradient(135deg,#141419,#0f4a52);color:#fff;padding:5rem 0 4.3rem;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -20% -45% auto;width:520px;height:520px;background:rgba(222,169,58,.08);border-radius:50%;filter:blur(10px)}
+.ey{color:var(--gold2);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+.hero h1{font-family:var(--fd);font-size:clamp(2.15rem,5vw,4.35rem);line-height:1.05;margin:.75rem 0 .95rem;max-width:860px}
+.hero p{max-width:780px;color:rgba(255,255,255,.76);font-size:1.05rem}
+.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.7rem}
+.hero-strip{margin-top:2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;max-width:940px}
+.hero-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:14px;padding:1rem}
+.hero-stat strong{display:block;color:var(--gold2);font-family:var(--fd);font-size:1.4rem;line-height:1}
+.hero-stat span{display:block;color:rgba(255,255,255,.58);font-size:.72rem;margin-top:.35rem}
+.s{padding:4.2rem 0}
+.bg-smoke{background:var(--smoke)}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:start}
+.panel{background:#fff;border-radius:18px;padding:1.8rem;box-shadow:0 10px 35px rgba(0,0,0,.08);border:1px solid var(--border)}
+h2{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.75rem);line-height:1.15;margin:.45rem 0 1rem}
+h3{font-family:var(--fd);font-size:1.35rem;line-height:1.2}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.card{background:#fff;border-radius:16px;padding:1.35rem;box-shadow:0 8px 30px rgba(0,0,0,.07);border:1px solid var(--border)}
+.card h3{color:var(--teal);margin-bottom:.45rem}
+.card p,.card li{font-size:.92rem;color:#42424d}
+.icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,rgba(200,150,42,.16),rgba(15,74,82,.09));display:grid;place-items:center;font-size:1.25rem;margin-bottom:.8rem}
+.tick{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.tick li{font-size:.94rem;color:#333}
+.tick li:before{content:'✓';color:var(--gold);font-weight:900;margin-right:.5rem}
+.steps{counter-reset:step}
+.step{position:relative;padding-left:3.4rem}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:1.15rem;top:1.35rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;width:1.8rem;height:1.8rem;border-radius:50%;display:grid;place-items:center;font-weight:800}
+.agent-note{background:linear-gradient(135deg,rgba(15,74,82,.09),rgba(200,150,42,.08));border:1px solid var(--border);border-radius:18px;padding:1.6rem}
+.cta{background:linear-gradient(135deg,var(--charcoal),#202027);color:#fff;border-radius:20px;padding:2.25rem;margin-top:2rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
+.cta p{color:rgba(255,255,255,.66)}
+.faq{display:flex;flex-direction:column;gap:.75rem}
+.faq details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem}
+.faq summary{cursor:pointer;font-weight:700;color:var(--teal)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:1rem}
+.form .full{grid-column:1/-1}
+input,textarea,select{width:100%;border:1px solid rgba(14,14,18,.16);border-radius:9px;padding:.82rem .9rem;font-family:var(--fb);background:#fff}
+label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--muted);margin-bottom:.3rem}
+footer{background:#141419;color:rgba(255,255,255,.42);padding:1.6rem 0;text-align:center;font-size:.8rem}
+footer a{color:var(--gold2)}
+@media(max-width:820px){
+  .split,.cta{grid-template-columns:1fr}
+  .hero-strip{grid-template-columns:1fr 1fr}
+  .nav{align-items:flex-start;flex-direction:column}
+  .hero{padding:3.4rem 0}
+  .s{padding:3rem 0}
+}
+@media(max-width:520px){
+  .hero-strip,.form{grid-template-columns:1fr}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"Company Let Partnerships for Estate Agents",
+  "provider":{"@type":"Organization","name":"PVR Groups Ltd","url":"https://pvrgroupsltd.co.uk"},
+  "areaServed":["London","Manchester","United Kingdom"],
+  "description":"Professional company let partnerships for estate agents seeking reliable applicants, long-term rental solutions, corporate accommodation demand and responsible property care."
+}
+</script>
+</head>
+
+<body>
+<nav>
+  <div class="c nav">
+    <a class="logo" href="../index.html">PVR Groups Ltd<small>Luxury Serviced Accommodation</small></a>
+    <div class="navlinks">
+      <a href="../index.html#stays">Stays</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="btn" href="mailto:contact@pvrgroupsltd.co.uk?subject=Estate%20Agent%20Company%20Let%20Enquiry">Send Property</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="c">
+    <div class="ey">For Estate Agents</div>
+    <h1>Reliable Company Let Partners for Suitable Rental Properties</h1>
+    <p>PVR Groups Ltd works with estate agents who need professional, well-organised company applicants for landlords seeking stable rent, reduced void periods and responsible property care.</p>
+    <div class="hero-actions">
+      <a class="btn" href="mailto:contact@pvrgroupsltd.co.uk?subject=Estate%20Agent%20Company%20Let%20Enquiry">Send Us a Property</a>
+      <a class="btn outline" href="#process">See How It Works</a>
+    </div>
+    <div class="hero-strip">
+      <div class="hero-stat"><strong>PRS</strong><span>Registered operator</span></div>
+      <div class="hero-stat"><strong>Long-term</strong><span>Company let approach</span></div>
+      <div class="hero-stat"><strong>£200</strong><span>Minor maintenance support</span></div>
+      <div class="hero-stat"><strong>Clear</strong><span>Agent communication</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="c split">
+    <div>
+      <div class="ey">Why Agents Work With Us</div>
+      <h2>A Cleaner Route for Agents, Landlords and Occupiers</h2>
+      <p class="muted">We help agents place suitable properties with a professional company tenant structure. Our model supports corporate stays, relocation guests, project workers and medium-term occupiers while keeping the property presented to a high standard.</p>
+      <p class="muted" style="margin-top:1rem;">This page is designed for estate agents. If you have a landlord who wants a reliable long-term arrangement and a property in a strong location, we are happy to review it quickly and professionally.</p>
+    </div>
+    <div class="panel">
+      <h3>Best-fit properties</h3>
+      <ul class="tick" style="margin-top:1rem">
+        <li>Flats or houses in strong rental and business locations</li>
+        <li>Properties near transport links, offices, hospitals or event areas</li>
+        <li>Landlords open to company let agreements</li>
+        <li>Clean, presentable homes suitable for professional occupiers</li>
+        <li>Properties where building rules allow this arrangement</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="s bg-smoke">
+  <div class="c">
+    <div class="ey">Agent Benefits</div>
+    <h2>What Your Agency Gains</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">🤝</div><h3>Professional Applicant</h3><p>A company applicant with clear communication, company details and a serious approach to property agreements.</p></div>
+      <div class="card"><div class="icon">🏠</div><h3>Reduced Void Risk</h3><p>Suitable properties can move into a longer-term company let structure, giving landlords more certainty and reducing repeated remarketing.</p></div>
+      <div class="card"><div class="icon">📄</div><h3>Smoother Landlord Conversation</h3><p>We can clearly explain the model, responsibilities and expected property care so landlords feel comfortable with the arrangement.</p></div>
+      <div class="card"><div class="icon">🧹</div><h3>High Property Standards</h3><p>We keep properties clean, well-presented and professionally managed because our business depends on strong standards.</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3>Minor Maintenance Support</h3><p>We can support minor maintenance up to £200, helping reduce small day-to-day landlord headaches.</p></div>
+      <div class="card"><div class="icon">📞</div><h3>Responsive Point of Contact</h3><p>Your agency gets a direct, professional contact at PVR Groups Ltd for updates, questions and next steps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="c split">
+    <div>
+      <div class="ey">How We Operate</div>
+      <h2>Professional Short and Medium-Term Accommodation</h2>
+      <p class="muted">We provide well-managed accommodation for corporate occupiers, relocators, contractors, insurance-related stays, project teams and other professional guests who need flexible, high-standard housing.</p>
+      <p class="muted" style="margin-top:1rem;">We do not operate properties casually. Each suitable unit is treated as a professional accommodation asset, with guest communication, cleaning coordination, care standards and clear house rules.</p>
+    </div>
+    <div class="agent-note">
+      <h3>Simple positioning for landlords</h3>
+      <p class="muted" style="margin-top:.75rem;">“PVR Groups Ltd would take the property under a professional company let arrangement, maintain strong presentation standards, support minor maintenance, and use the property for professional short and medium-term accommodation demand.”</p>
+    </div>
+  </div>
+</section>
+
+<section class="s bg-smoke" id="process">
+  <div class="c">
+    <div class="ey">Process</div>
+    <h2>How the Agent Partnership Works</h2>
+    <div class="grid steps">
+      <div class="card step"><h3>Send the property</h3><p>Share the listing, rent, location, landlord position and any restrictions.</p></div>
+      <div class="card step"><h3>We check suitability</h3><p>We review location, numbers, condition, access, building rules and demand profile.</p></div>
+      <div class="card step"><h3>We discuss with you</h3><p>If suitable, we explain the company let structure and provide the details needed for the landlord.</p></div>
+      <div class="card step"><h3>Agreement and onboarding</h3><p>Once agreed, we move through referencing, agreement terms and property setup professionally.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="c split">
+    <div>
+      <div class="ey">Send Us a Property</div>
+      <h2>Have a Suitable Property?</h2>
+      <p class="muted">Email us the property details and we will review it. Include the rent, location, property type, availability date and whether the landlord is open to a company let.</p>
+      <div class="hero-actions" style="margin-top:1.2rem">
+        <a class="btn" href="mailto:contact@pvrgroupsltd.co.uk?subject=Estate%20Agent%20Property%20Submission&body=Hi%20PVR%20Groups%20Ltd,%0A%0AI%20would%20like%20to%20send%20a%20property%20for%20company%20let%20review.%0A%0AAgency%20Name:%0AAgent%20Name:%0APhone:%0AProperty%20Location:%0AMonthly%20Rent:%0ABedrooms:%0AAvailable%20From:%0ALandlord%20open%20to%20company%20let:%0AListing%20Link:%0A%0AAdditional%20Notes:%0A">Email Property Details</a>
+        <a class="btn light-outline" href="tel:+447459150439">Call PVR Groups</a>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Quick checklist before sending</h3>
+      <ul class="tick" style="margin-top:1rem">
+        <li>Property is in a strong location</li>
+        <li>Landlord is open to company applications</li>
+        <li>Building rules do not block flexible accommodation use</li>
+        <li>Property is clean, modern or can be presented well</li>
+        <li>Rent level leaves room for a sensible commercial model</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="s bg-smoke">
+  <div class="c">
+    <div class="ey">Questions</div>
+    <h2>Estate Agent FAQs</h2>
+    <div class="faq">
+      <details open>
+        <summary>Is this suitable for every rental property?</summary>
+        <p class="muted" style="margin-top:.6rem">No. We only consider properties where location, rent, access, condition and agreement terms make commercial sense.</p>
+      </details>
+      <details>
+        <summary>Do you work directly with estate agents?</summary>
+        <p class="muted" style="margin-top:.6rem">Yes. We welcome suitable property introductions from estate agents and aim to keep communication clear and professional.</p>
+      </details>
+      <details>
+        <summary>How should agents explain this to landlords?</summary>
+        <p class="muted" style="margin-top:.6rem">Position it as a professional company let arrangement with a registered property operator, strong property care standards and clear responsibilities.</p>
+      </details>
+      <details>
+        <summary>Do you only work in London and Manchester?</summary>
+        <p class="muted" style="margin-top:.6rem">London and Manchester are current focus areas, but we can consider strong locations across the UK where demand and numbers make sense.</p>
+      </details>
+    </div>
+
+    <div class="cta">
+      <div>
+        <h2 style="color:#fff;margin:0 0 .4rem">Let’s Review Your Next Property</h2>
+        <p>Send the details to PVR Groups Ltd and we will confirm whether it suits our company-let model.</p>
+      </div>
+      <a class="btn" href="mailto:contact@pvrgroupsltd.co.uk?subject=Estate%20Agent%20Company%20Let%20Enquiry">Send Property Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="c">
+    © PVR Groups Ltd. Innovate, Construct, Elevate. ·
+    <a href="../index.html">Home</a> ·
+    <a href="mailto:contact@pvrgroupsltd.co.uk">contact@pvrgroupsltd.co.uk</a>
+  </div>
+</footer>
+<script src="/script.js"></script>
+</body>
+</html>

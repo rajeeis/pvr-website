@@ -1,0 +1,15 @@
+# PVR Groups Ltd SEO redirects and error handling
+RewriteEngine On
+
+# Old property SEO pages removed - send to original property page routes
+Redirect 301 /properties/canary-wharf.html /property.html?id=12edc0
+Redirect 301 /properties/old-trafford.html /property.html?id=2e1725
+Redirect 301 /properties/castlefield.html /property.html?id=e8f52c
+
+# Old service slugs if Google indexed them
+Redirect 301 /serviced-accommodation.html /services/serviced-accommodation.html
+Redirect 301 /property-management.html /services/property-management.html
+Redirect 301 /guaranteed-rent.html /services/guaranteed-rent.html
+Redirect 301 /corporate-lets.html /services/corporate-lets.html
+
+ErrorDocument 404 /404.html

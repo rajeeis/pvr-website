@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal — PVR Groups Ltd</title>
+<meta name="description" content="Local guides, travel tips and property insights from PVR Groups Ltd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { padding-top: 70px; }
+  .journal-nav-bar { background: var(--charcoal); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: .9rem 0; box-shadow: 0 4px 32px rgba(0,0,0,.3); }
+  .jnav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .jnav-logo { font-family: var(--font-d); color: #fff; font-size: 1.2rem; }
+  .jnav-logo small { display: block; font-size: .55rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold2); font-family: var(--font-b); }
+  .jnav-back { color: rgba(255,255,255,.6); font-size: .83rem; display: flex; align-items: center; gap: .4rem; transition: var(--t); }
+  .jnav-back:hover { color: var(--gold2); }
+</style>
+</head>
+<body>
+
+<nav class="journal-nav-bar">
+  <div class="c">
+    <div class="jnav-inner">
+      <a href="index.html" class="jnav-logo">PVR Groups Ltd <small>Luxury Serviced Accommodation</small></a>
+      <a href="index.html#journal" class="jnav-back">← Back to Journal</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Article content rendered by JS -->
+<div id="articleWrap">
+  <div style="min-height:80vh;display:flex;align-items:center;justify-content:center;">
+    <div style="width:36px;height:36px;border:3px solid rgba(200,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;"></div>
+  </div>
+</div>
+
+<footer style="background:var(--charcoal);padding:2rem 0;border-top:1px solid rgba(255,255,255,.07);">
+  <div class="c" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:rgba(255,255,255,.35);">
+    <p>© <span id="yr"></span> PVR Groups Ltd. All rights reserved.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.35)">Home</a>
+      <a href="index.html#stays" style="color:rgba(255,255,255,.35)">Properties</a>
+      <a href="terms.html" target="_blank" style="color:rgba(255,255,255,.35)">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
+<script>
+const ARTICLES = {
+  'canary-wharf': {
+    title: 'The Ultimate Canary Wharf Neighbourhood Guide',
+    category: 'London Guide',
+    date: 'June 2025',
+    readTime: '5 min read',
+    cover: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1200&q=80',
+    content: `
+      <h2>Welcome to Canary Wharf</h2>
+      <p>Canary Wharf is one of London's most dynamic districts — a gleaming financial hub with an increasingly vibrant residential and leisure scene. Whether you're here for a business trip, a weekend break, or a longer stay, there's far more to discover than glass towers and trading floors.</p>
+
+      <h2>Getting Around</h2>
+      <p>Canary Wharf is exceptionally well connected:</p>
+      <ul>
+        <li><strong>DLR</strong> — direct to Bank in 11 minutes, Stratford in 8, Woolwich in 15</li>
+        <li><strong>Jubilee Line</strong> — Westminster in 11 minutes, Bond Street in 17</li>
+        <li><strong>Elizabeth Line (Crossrail)</strong> — from Canary Wharf, reach Heathrow in 45 minutes or Liverpool Street in 7</li>
+        <li><strong>Thames Clipper</strong> — the most scenic commute in London; hop on at Canary Wharf Pier</li>
+      </ul>
+
+      <h2>Best Coffee Spots</h2>
+      <p>You don't have to settle for chain coffee in Canary Wharf. Some of our favourites:</p>
+      <ul>
+        <li><strong>Crossrail Place Roof Garden Café</strong> — a hidden gem inside the roof garden, great for a quiet morning</li>
+        <li><strong>Notes Coffee</strong> — excellent specialty coffee with solid brunch options</li>
+        <li><strong>Redemption Roasters</strong> — ethically sourced beans, great atmosphere</li>
+      </ul>
+
+      <h2>Dining Out</h2>
+      <p>The waterfront around West India Quay and Canary Wharf has restaurants to suit every occasion:</p>
+      <ul>
+        <li><strong>Hawksmoor Wood Wharf</strong> — exceptional steaks in a beautifully designed space</li>
+        <li><strong>Señor Ceviche</strong> — vibrant Peruvian sharing plates, great cocktails</li>
+        <li><strong>Boisdale of Canary Wharf</strong> — Scottish dining, whisky, and live jazz</li>
+        <li><strong>Plateau</strong> — French fine dining with sweeping views across the Wharf</li>
+      </ul>
+
+      <h2>Things to Do</h2>
+      <ul>
+        <li><strong>Crossrail Place Roof Garden</strong> — free to enter, an urban oasis with planting from across the world's tropical zones</li>
+        <li><strong>Museum of London Docklands</strong> — fascinating history of the Port of London</li>
+        <li><strong>Thames Path walks</strong> — walk east toward Greenwich for stunning views and the Cutty Sark</li>
+        <li><strong>The O2 Arena</strong> — 5–10 minutes by Jubilee Line; check the events calendar for concerts and shows</li>
+        <li><strong>ExCeL London</strong> — 9–13 minutes by DLR; regularly hosts major trade shows and conferences</li>
+      </ul>
+
+      <h2>Shopping</h2>
+      <p>Canary Wharf has over 300 shops across its malls — from high street staples to independent boutiques. Jubilee Place and Canada Place are the main indoor malls. For something more local, head to Crossrail Place or the outdoor Canada Square Park market on weekends.</p>
+
+      <h2>Staying at Our Canary Wharf Property</h2>
+      <p>Our Modern Riverside 1BR apartment in Aberfeldy Village puts you within walking distance of the DLR and the waterfront. Balcony views, hotel-quality linen, and a fully equipped kitchen mean you can enjoy everything the Wharf offers while having a proper home base.</p>
+
+      <div class="jcta">
+        <h3>Stay in Canary Wharf</h3>
+        <p>Book our 1-bedroom riverside apartment with balcony — hotel standard, direct booking price.</p>
+        <a href="property.html?id=12edc0" class="btn btn-gold">View Property & Availability →</a>
+      </div>
+    `
+  },
+
+  'manchester-guide': {
+    title: 'Northern Quarter: Where to Eat, Drink and Explore',
+    category: 'Manchester Guide',
+    date: 'May 2025',
+    readTime: '6 min read',
+    cover: 'https://images.unsplash.com/photo-1543872084-c7bd3822856f?w=1200&q=80',
+    content: `
+      <h2>Manchester's Most Creative Neighbourhood</h2>
+      <p>The Northern Quarter is the beating cultural heart of Manchester — an independent-spirited neighbourhood packed with record shops, vintage clothing, art galleries, craft beer bars, and some of the city's most exciting restaurants. If you're staying at either of our Manchester properties, this is your first port of call.</p>
+
+      <h2>Where to Eat</h2>
+      <ul>
+        <li><strong>Elnecot</strong> — modern British cooking with a strong focus on produce; one of Manchester's best</li>
+        <li><strong>Bundobust</strong> — Indian street food meets craft beer; queue early or expect a wait</li>
+        <li><strong>Mackie Mayor</strong> — a converted Victorian meat market turned food hall; great for sharing plates</li>
+        <li><strong>Mana</strong> — Manchester's only Michelin-starred restaurant; book well in advance</li>
+        <li><strong>Elnecot</strong> — seasonal British dishes with flair; worth every penny</li>
+        <li><strong>The Refuge by Volta</strong> — inside the Principal Manchester hotel; spectacular room, great cocktails</li>
+      </ul>
+
+      <h2>Bars & Drinks</h2>
+      <p>Manchester has a serious craft beer and cocktail culture:</p>
+      <ul>
+        <li><strong>Cloudwater Brew Co</strong> — one of the UK's most acclaimed craft breweries; always rotating taps</li>
+        <li><strong>Port Street Beer House</strong> — walls covered in tap handles; excellent selection from across the world</li>
+        <li><strong>The Fitzgerald</strong> — buzzing independent bar with great spirits selection</li>
+        <li><strong>Hawksmoor Manchester</strong> — cocktail bar and restaurant in a stunning former courthouse</li>
+      </ul>
+
+      <h2>Music & Culture</h2>
+      <ul>
+        <li><strong>Manchester Art Gallery</strong> — free entry, excellent permanent and touring exhibitions</li>
+        <li><strong>HOME</strong> — arts venue for film, theatre, art, and music</li>
+        <li><strong>The Warehouse Project</strong> — legendary club night in various venues; October to New Year</li>
+        <li><strong>Co-op Live</strong> — Manchester's new 23,500-capacity arena; the UK's largest indoor venue</li>
+        <li><strong>Old Trafford</strong> — walk from our M16 property to Man United's iconic stadium</li>
+      </ul>
+
+      <h2>Castlefield & Beyond</h2>
+      <p>Our Castlefield property is steps from the canal basin — one of Manchester's most photogenic spots. Walk the towpaths, visit the Roman fort ruins, and explore the independent restaurants and bars along Deansgate and Liverpool Road.</p>
+
+      <h2>Getting Around Manchester</h2>
+      <ul>
+        <li><strong>Metrolink tram</strong> — excellent network connecting all major areas; single fares are cheap</li>
+        <li><strong>Manchester Piccadilly</strong> — main rail hub; 2 hours to London by Avanti train</li>
+        <li><strong>Manchester Airport</strong> — 25 minutes from Piccadilly by train</li>
+        <li><strong>MediaCity UK</strong> — Salford Quays tram stop; BBC and ITV studios; great waterfront dining</li>
+      </ul>
+
+      <div class="jcta">
+        <h3>Stay in Manchester</h3>
+        <p>Choose from our Old Trafford 2BR or Castlefield Canal-Side apartment — both professionally managed, hotel-standard finish.</p>
+        <a href="index.html#stays" class="btn btn-gold" style="display:inline-flex;">Browse Manchester Properties →</a>
+      </div>
+    `
+  },
+
+  'sa-vs-btl': {
+    title: 'Serviced Accommodation vs. Buy-to-Let: What\'s Right for You?',
+    category: 'Property Insights',
+    date: 'April 2025',
+    readTime: '8 min read',
+    cover: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=1200&q=80',
+    content: `
+      <h2>The Core Question</h2>
+      <p>If you own a property or are considering buying one as an investment, you'll face a fundamental choice: let it to a long-term tenant under a standard AST (Assured Shorthold Tenancy), or operate it as serviced accommodation (SA) — short-let furnished rooms rented on platforms like Airbnb, Booking.com, or directly to guests.</p>
+      <p>Both models can work well. The right choice depends on your property, your location, your risk tolerance, and how hands-on you want to be. Here's an honest comparison.</p>
+
+      <h2>Returns: How Do They Actually Compare?</h2>
+      <p>In high-demand UK cities, SA can generate 2–3× the gross income of a traditional let on the same property. A 2-bedroom flat in Canary Wharf that might achieve £2,200/month on a standard let could generate £4,500–£6,000/month gross on SA.</p>
+      <p>But the gross figure isn't the net figure. SA comes with significantly higher costs: platform commissions (15%), professional cleaning (£60–£120 per changeover), linen supply, consumables, maintenance (properties take more wear with frequent guests), and potentially a management fee if you're not self-managing.</p>
+      <p>Net yields on well-managed SA in prime UK locations typically run 30–60% above equivalent BTL yields — but the variance is wide. A property in a weak SA market, or one poorly managed, can easily underperform a simple long let.</p>
+
+      <h2>Management Demands</h2>
+      <p>This is where most landlords get the SA calculation wrong. SA is not a passive investment in the way a long let can be.</p>
+      <ul>
+        <li><strong>BTL:</strong> Find a tenant, sign an AST, collect rent monthly, deal with maintenance. Largely set-and-forget with a good letting agent.</li>
+        <li><strong>SA (self-managed):</strong> Manage guest enquiries and bookings, coordinate check-ins and check-outs, arrange cleaning between every guest, manage pricing dynamically, handle reviews, maintain the property to a hotel standard. This is essentially running a hospitality business.</li>
+        <li><strong>SA (professionally managed):</strong> You pay a management fee (typically 15–20% of revenue) and hand everything over. Your net returns are lower, but the time demand is comparable to BTL.</li>
+      </ul>
+
+      <h2>Compliance and Risk</h2>
+      <p>SA comes with more compliance requirements than BTL:</p>
+      <ul>
+        <li>Fire risk assessment and appropriate equipment (smoke detectors, CO detectors, fire extinguishers)</li>
+        <li>EPC requirements (minimum E rating)</li>
+        <li>Gas and electrical safety certificates</li>
+        <li>Local licensing — some councils now require SA licences; always check your local authority</li>
+        <li>HMRC classification — SA may qualify as a Furnished Holiday Let (FHL) with specific tax rules; always consult an accountant</li>
+        <li>Insurance — standard BTL insurance won't cover SA; you need specialist short-let cover</li>
+        <li>Mortgage terms — many residential and BTL mortgages prohibit SA; check with your lender</li>
+      </ul>
+
+      <h2>Location Is Everything for SA</h2>
+      <p>SA income is highly location-dependent in a way that BTL isn't. A mediocre flat in Canary Wharf outperforms an excellent house in a rural market town on SA. The key demand drivers are:</p>
+      <ul>
+        <li>Proximity to business districts and conference centres</li>
+        <li>Transport links — near a major station, airport, or tube stop</li>
+        <li>Tourism and leisure draw — near stadiums, arenas, attractions</li>
+        <li>Healthcare clusters — NHS staff and medical contractors are steady, year-round SA tenants</li>
+        <li>Universities — less year-round demand but strong peaks during term time and graduation</li>
+      </ul>
+
+      <h2>The Honest Recommendation</h2>
+      <p>SA is not right for every property or every landlord. For a property in a prime urban location with strong short-stay demand, professionally managed SA will almost certainly outperform a standard let, net of all costs. For a property in a weaker market, or an owner who doesn't want any operational involvement, a long let remains the safer, simpler choice.</p>
+      <p>The best landlords we work with treat SA as a business decision, not a side hustle. They choose the right properties, ensure compliance, use professional management, and track their returns properly.</p>
+
+      <div class="jcta">
+        <h3>Find Out What Your Property Could Earn</h3>
+        <p>Use our free income calculator, or contact us for a full property assessment — no obligation.</p>
+        <a href="index.html#calculator" class="btn btn-gold" style="display:inline-flex;">Try the Calculator →</a>
+      </div>
+    `
+  }
+};
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const params  = new URLSearchParams(window.location.search);
+const id      = params.get('id') || '';
+const article = ARTICLES[id];
+
+if (!article) {
+  document.getElementById('articleWrap').innerHTML = `
+    <div style="min-height:60vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;text-align:center;padding:2rem;">
+      <div style="font-size:3rem;">📰</div>
+      <h2>Article Not Found</h2>
+      <p style="color:var(--muted);">That article doesn't exist or the link is incorrect.</p>
+      <a href="index.html#journal" class="btn btn-gold">Back to Journal</a>
+    </div>`;
+} else {
+  document.title = `${article.title} — PVR Groups Ltd`;
+  document.querySelector('meta[name="description"]').content = article.title;
+
+  document.getElementById('articleWrap').innerHTML = `
+    <div style="background:var(--smoke);padding:3rem 0 0;">
+      <div class="c" style="max-width:820px;">
+        <div style="margin-bottom:1.5rem;">
+          <span style="font-size:.67rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">${article.category}</span>
+        </div>
+        <h1 style="font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem;">${article.title}</h1>
+        <div style="display:flex;gap:1.5rem;color:var(--muted);font-size:.83rem;margin-bottom:2rem;">
+          <span>${article.date}</span>
+          <span>${article.readTime}</span>
+        </div>
+      </div>
+    </div>
+    <img src="${article.cover}" alt="${article.title}"
+         style="width:100%;height:420px;object-fit:cover;display:block;"
+         onerror="this.style.display='none'">
+    <div class="journal-article c">
+      ${article.content}
+    </div>
+    <div style="background:var(--smoke);padding:3rem 0;border-top:1px solid rgba(200,150,42,.12);">
+      <div class="c" style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+        <span style="font-size:.85rem;color:var(--muted);">More articles:</span>
+        ${Object.entries(ARTICLES).filter(([k])=>k!==id).map(([k,a])=>`
+          <a href="journal.html?id=${k}" style="color:var(--gold);font-size:.85rem;font-weight:500;">${a.title} →</a>
+        `).join('')}
+      </div>
+    </div>`;
+}
+</script>
+</body>
+</html>

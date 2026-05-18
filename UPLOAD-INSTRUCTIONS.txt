@@ -1,0 +1,15 @@
+UPLOAD ORDER
+
+1. Upload index.html to public_html.
+2. Upload style.css and script.js to public_html.
+3. Upload property.html and journal.html to public_html.
+4. Create/open the services folder inside public_html.
+5. Upload all 4 service files into public_html/services/.
+6. Upload sitemap.xml, robots.txt, .htaccess and 404.html to public_html.
+7. Do not upload a properties folder. You said you will keep/use the original property page.
+
+CHECK AFTER UPLOAD
+- Homepage services section should scroll from menu.
+- Service cards on homepage should open detailed service pages.
+- /services/serviced-accommodation.html should show full detailed service model.
+- Old /properties/... links should redirect to property.html routes through .htaccess.

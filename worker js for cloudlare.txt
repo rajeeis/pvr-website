@@ -1,0 +1,76 @@
+export default {
+  async fetch(request, env) {
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    };
+
+    if (request.method === "OPTIONS") {
+      return new Response(null, { headers: corsHeaders });
+    }
+
+    const url = new URL(request.url);
+
+    if (url.pathname === "/health") {
+      return Response.json(
+        { ok: true, message: "PVR Uplisting Worker is live" },
+        { headers: corsHeaders }
+      );
+    }
+
+    const match = url.pathname.match(/^\/calendar\/([^/]+)$/);
+
+    if (!match) {
+      return Response.json(
+        {
+          error: "Invalid route",
+          use: "/calendar/PROPERTY_ID?from=YYYY-MM-DD&to=YYYY-MM-DD",
+        },
+        { status: 404, headers: corsHeaders }
+      );
+    }
+
+    const listingId = match[1];
+    const from = url.searchParams.get("from");
+    const to = url.searchParams.get("to");
+
+    if (!from || !to) {
+      return Response.json(
+        { error: "Missing from/to dates" },
+        { status: 400, headers: corsHeaders }
+      );
+    }
+
+    try {
+      const encodedApiKey = btoa(env.UPLISTING_API_KEY.trim());
+
+      const calUrl = `https://connect.uplisting.io/calendar/${listingId}?from=${from}&to=${to}`;
+
+      const calRes = await fetch(calUrl, {
+        method: "GET",
+        headers: {
+          "Authorization": `Basic ${encodedApiKey}`,
+          "X-Uplisting-Client-Id": env.UPLISTING_CLIENT_ID.trim(),
+          "Accept": "application/json",
+        },
+      });
+
+      const text = await calRes.text();
+
+      return new Response(text, {
+        status: calRes.status,
+        headers: {
+          ...corsHeaders,
+          "Content-Type": "application/json",
+        },
+      });
+
+    } catch (err) {
+      return Response.json(
+        { error: "Worker Error", message: err.message },
+        { status: 500, headers: corsHeaders }
+      );
+    }
+  },
+};
