@@ -398,7 +398,10 @@
     <h2 id="leadModalTitle">Join the PVR Deal Sourcing Academy priority list</h2>
     <p class="lead-modal-copy">Register your interest and we will notify you when access opens.</p>
 
-    <form class="lead-form" id="priorityAccessForm">
+    <form class="lead-form" id="priorityAccessForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="hidden" name="source" value="PVR Deal Sourcing Academy">
+      <input type="hidden" name="page" value="academy">
+
       <div class="lead-field">
         <label for="leadName">Full Name</label>
         <input id="leadName" name="fullName" type="text" autocomplete="name" required>
@@ -425,6 +428,8 @@
         </div>
       </fieldset>
 
+      <p class="lead-consent">By joining the priority list, you agree that PVR Groups Ltd may contact you about the Deal Sourcing Academy. We will not share your details with third parties.</p>
+      <div class="lead-error" id="priorityAccessError" role="alert">Something went wrong. Please try again or contact contact@pvrgroupsltd.co.uk</div>
       <button type="submit" class="btn btn-gold btn-lg lead-submit">Join Priority Access</button>
     </form>
 
@@ -528,7 +533,11 @@ section.s.bg-ivory .why-card p{color:var(--text)}
 .lead-option-grid input{position:absolute;opacity:0;pointer-events:none}
 .lead-option-grid span{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.06);color:rgba(255,255,255,.74);font-size:.86rem;font-weight:600;transition:var(--t)}
 .lead-option-grid input:checked+span{border-color:var(--gold2);background:rgba(222,169,58,.16);color:#fff;box-shadow:inset 0 0 0 1px rgba(222,169,58,.18)}
+.lead-consent{color:rgba(255,255,255,.46);font-size:.72rem;line-height:1.65;margin:-.1rem 0 0}
+.lead-error{display:none;border:1px solid rgba(222,169,58,.28);border-radius:var(--r);background:rgba(120,38,38,.28);color:rgba(255,255,255,.86);padding:.85rem 1rem;font-size:.82rem;line-height:1.6}
+.lead-error.show{display:block}
 .lead-submit{width:100%;justify-content:center;margin-top:.35rem}
+.lead-submit[disabled]{opacity:.72;cursor:wait;transform:none}
 .lead-success{position:relative;display:none;margin-top:1.2rem;border:1px solid rgba(222,169,58,.28);border-radius:var(--r2);background:rgba(15,74,82,.44);color:#fff;padding:1.1rem 1.2rem;text-align:center;font-weight:600;line-height:1.6}
 .lead-modal.submitted .lead-form{display:none}
 .lead-modal.submitted .lead-success{display:block;animation:fadeUp .38s ease both}
@@ -554,11 +563,14 @@ const hamburger=document.getElementById('hamburger');const mobNav=document.getEl
 
 const leadModal=document.getElementById('priorityAccessModal');
 const leadForm=document.getElementById('priorityAccessForm');
+const leadSubmit=leadForm?.querySelector('.lead-submit');
+const leadError=document.getElementById('priorityAccessError');
 let leadLastFocus=null;
 function openLeadModal(){
   if(!leadModal)return;
   leadLastFocus=document.activeElement;
   leadModal.classList.remove('submitted');
+  leadError?.classList.remove('show');
   leadModal.classList.add('open');
   leadModal.setAttribute('aria-hidden','false');
   document.body.classList.add('lead-modal-active');
@@ -570,12 +582,14 @@ function closeLeadModal(){
   leadModal.setAttribute('aria-hidden','true');
   document.body.classList.remove('lead-modal-active');
   leadForm?.reset();
+  leadError?.classList.remove('show');
+  if(leadSubmit){leadSubmit.disabled=false;leadSubmit.textContent='Join Priority Access'}
   leadLastFocus?.focus?.();
 }
 document.querySelectorAll('[data-open-lead],.btn[data-tier]').forEach(el=>{el.addEventListener('click',event=>{event.preventDefault();openLeadModal()})});
 document.querySelectorAll('[data-close-lead]').forEach(el=>{el.addEventListener('click',closeLeadModal)});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&leadModal?.classList.contains('open'))closeLeadModal()});
-leadForm?.addEventListener('submit',event=>{event.preventDefault();if(!leadForm.checkValidity()){leadForm.reportValidity();return}leadModal.classList.add('submitted')});
+leadForm?.addEventListener('submit',async event=>{event.preventDefault();if(!leadForm.checkValidity()){leadForm.reportValidity();return}leadError?.classList.remove('show');if(leadSubmit){leadSubmit.disabled=true;leadSubmit.textContent='Submitting...'}try{const response=await fetch(leadForm.action,{method:'POST',body:new FormData(leadForm),headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Lead submission failed');leadModal.classList.add('submitted');leadForm.reset()}catch(error){leadError?.classList.add('show');if(leadSubmit){leadSubmit.disabled=false;leadSubmit.textContent='Join Priority Access'}}});
 </script>
 
 </body>
