@@ -876,3 +876,797 @@ main article li{
     padding-left:1.15rem !important;
   }
 }
+.footer-compliance{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.8rem;
+  margin-top:1.4rem;
+}
+
+.compliance-item{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(200,150,42,.18);
+  padding:.65rem 1rem;
+  border-radius:999px;
+  color:rgba(255,255,255,.78);
+  font-size:.74rem;
+  font-weight:600;
+  letter-spacing:.03em;
+  transition:.25s ease;
+}
+
+.compliance-item:hover{
+  border-color:rgba(222,169,58,.45);
+  transform:translateY(-2px);
+}
+
+.compliance-icon{
+  font-size:.95rem;
+}
+
+/* ======================================================
+   PREMIUM COMPLIANCE BAR
+====================================================== */
+
+.footer-top-compliance{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:70px;
+  flex-wrap:wrap;
+  padding:34px 20px;
+  background:#141419;
+  border-top:1px solid rgba(200,150,42,.12);
+  border-bottom:1px solid rgba(200,150,42,.18);
+}
+
+.footer-top-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-width:130px;
+}
+
+.logo-only img{
+  height:58px;
+  max-width:130px;
+  object-fit:contain;
+  background:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.footer-top-icon{
+  font-size:30px;
+  margin-bottom:12px;
+  line-height:1;
+}
+
+.footer-top-item span{
+  color:#f3dfb5;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+
+@media(max-width:768px){
+  .footer-top-compliance{
+    gap:28px;
+    padding:28px 15px;
+  }
+
+  .footer-top-item{
+    min-width:120px;
+  }
+
+  .logo-only img{
+    height:48px;
+    max-width:115px;
+    padding:8px 13px;
+  }
+
+  .footer-top-icon{
+    font-size:25px;
+  }
+
+  .footer-top-item span{
+    font-size:15px;
+  }
+}
+.premium-services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+  padding:60px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.service-card{
+  background:#141419;
+  border:1px solid rgba(201,155,45,.15);
+  border-radius:18px;
+  padding:38px 32px;
+  transition:.3s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+
+.service-card:hover{
+  transform:translateY(-6px);
+  border-color:#d4a63a;
+}
+
+.service-icon{
+  font-size:42px;
+  margin-bottom:18px;
+}
+
+.service-card h3{
+  color:#f3dfb5;
+  font-size:28px;
+  margin-bottom:14px;
+  font-weight:700;
+}
+
+.service-card p{
+  color:#d0d0d0;
+  line-height:1.7;
+  font-size:16px;
+  margin-bottom:22px;
+}
+
+.service-tag{
+  display:inline-block;
+  background:#d4a63a;
+  color:#111;
+  padding:10px 18px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+}
+.website-hero{
+  position:relative;
+  min-height:72vh;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at top left, rgba(200,150,42,.18), transparent 35%),
+    linear-gradient(135deg,#0e0e12 0%,#141419 52%,#0f4a52 120%);
+  color:#fff;
+  padding:9rem 0 5rem;
+  overflow:hidden;
+}
+
+.website-hero::after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  right:-180px;
+  top:-120px;
+  background:rgba(222,169,58,.08);
+  filter:blur(6px);
+}
+
+.website-hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.website-hero h1{
+  color:#fff;
+  font-size:clamp(2.6rem,6vw,5.2rem);
+  margin:.8rem 0 1.2rem;
+}
+
+.website-hero p{
+  color:rgba(255,255,255,.65);
+  max-width:660px;
+  margin:0 auto 2rem;
+  font-size:1.05rem;
+}
+
+.website-hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-bottom:2.2rem;
+}
+
+.website-price-card{
+  display:inline-flex;
+  align-items:center;
+  gap:1rem;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(222,169,58,.32);
+  border-radius:999px;
+  padding:.85rem 1.4rem;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.website-price-card span{
+  color:rgba(255,255,255,.7);
+  font-size:.82rem;
+  font-weight:600;
+}
+
+.website-price-card strong{
+  color:var(--gold2);
+  font-family:var(--font-d);
+  font-size:1.7rem;
+}
+
+.website-price-card small{
+  color:rgba(255,255,255,.45);
+  font-size:.72rem;
+}
+
+.website-package-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+}
+
+.website-package-card{
+  background:#fff;
+  border:1px solid rgba(200,150,42,.14);
+  border-left:4px solid var(--gold);
+  border-radius:18px;
+  padding:2rem;
+  box-shadow:0 18px 50px rgba(14,14,18,.08);
+  transition:.35s ease;
+}
+
+.website-package-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 28px 80px rgba(14,14,18,.14);
+  border-color:rgba(200,150,42,.35);
+}
+
+.web-card-icon{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,rgba(200,150,42,.12),rgba(15,74,82,.08));
+  font-size:1.35rem;
+  margin-bottom:1rem;
+}
+
+.website-package-card h4{
+  font-family:var(--font-b);
+  font-size:1rem;
+  color:var(--ink);
+  margin-bottom:.6rem;
+}
+
+.website-package-card p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.75;
+}
+
+.website-cta-box{
+  margin-top:3rem;
+  background:linear-gradient(135deg,var(--charcoal),var(--teal));
+  border-radius:22px;
+  padding:3rem 2rem;
+  text-align:center;
+  box-shadow:0 25px 80px rgba(14,14,18,.2);
+}
+
+.website-cta-box h2{
+  color:#fff;
+  margin-bottom:.8rem;
+}
+
+.website-cta-box p{
+  max-width:620px;
+  margin:0 auto 1.6rem;
+  color:rgba(255,255,255,.62);
+}
+
+@media(max-width:768px){
+  .website-hero{
+    min-height:auto;
+    padding:7rem 0 4rem;
+  }
+
+  .website-hero-actions{
+    flex-direction:column;
+  }
+
+  .website-hero-actions .btn{
+    width:100%;
+  }
+
+  .website-price-card{
+    flex-direction:column;
+    border-radius:18px;
+    gap:.3rem;
+  }
+}
+/* FUNDING PAGE */
+
+.funding-hero{
+  background:#f6f1ea;
+}
+
+.website-section-heading{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 60px;
+}
+
+.website-section-heading h2{
+  font-size:58px;
+  line-height:1.05;
+  margin:18px 0;
+}
+
+.website-section-heading p{
+  font-size:19px;
+  line-height:1.8;
+  color:#666;
+}
+
+.website-why-section{
+  padding:100px 0;
+  background:#fff;
+}
+
+.website-why-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
+  align-items:center;
+}
+
+.website-why-content h2{
+  font-size:60px;
+  line-height:1.05;
+  margin:20px 0;
+}
+
+.website-why-content p{
+  color:#666;
+  font-size:18px;
+  line-height:1.9;
+}
+
+.website-benefits{
+  margin-top:30px;
+  display:grid;
+  gap:18px;
+  padding:0;
+  list-style:none;
+}
+
+.website-benefits li{
+  font-size:18px;
+  color:#222;
+}
+
+.website-why-card{
+  background:#111;
+  border-radius:30px;
+  padding:50px;
+  color:#fff;
+  display:grid;
+  gap:30px;
+}
+
+.website-stat{
+  border-bottom:1px solid rgba(255,255,255,.1);
+  padding-bottom:24px;
+}
+
+.website-stat:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+
+.website-stat strong{
+  display:block;
+  font-size:48px;
+  color:#d4a437;
+  margin-bottom:10px;
+}
+
+.website-stat span{
+  color:#cfcfcf;
+  font-size:17px;
+}
+
+.website-cta-section{
+  padding:100px 0;
+  background:#f6f1ea;
+}
+
+.website-cta-box{
+  background:#111;
+  border-radius:32px;
+  padding:80px 50px;
+  text-align:center;
+  color:#fff;
+}
+
+.website-cta-box h2{
+  font-size:58px;
+  line-height:1.05;
+  margin:20px 0;
+}
+
+.website-cta-box p{
+  max-width:760px;
+  margin:0 auto 35px;
+  color:#cfcfcf;
+  line-height:1.9;
+  font-size:18px;
+}
+
+.website-eyebrow{
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+@media(max-width:992px){
+
+  .website-why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .website-section-heading h2,
+  .website-why-content h2,
+  .website-cta-box h2{
+    font-size:42px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .website-section-heading h2,
+  .website-why-content h2,
+  .website-cta-box h2{
+    font-size:34px;
+  }
+
+  .website-why-card{
+    padding:35px;
+  }
+
+  .website-cta-box{
+    padding:60px 30px;
+  }
+
+}
+/* FIX FUNDING HERO COLORS */
+
+.funding-hero{
+  background:#f6f1ea !important;
+}
+
+.funding-hero .website-eyebrow{
+  color:#d4a437 !important;
+}
+
+.funding-hero h1{
+  color:#111 !important;
+  opacity:1 !important;
+}
+
+.funding-hero p{
+  color:#5f5f5f !important;
+  opacity:1 !important;
+}
+
+.funding-hero .website-price-card{
+  background:#fff !important;
+  border:1px solid rgba(212,164,55,.35);
+  color:#111 !important;
+}
+
+.funding-hero .website-price-card span{
+  color:#777 !important;
+}
+
+.funding-hero .website-price-card small{
+  color:#888 !important;
+}
+
+.funding-hero .btn-outline{
+  border:1px solid #d4a437 !important;
+  color:#d4a437 !important;
+  background:transparent !important;
+}
+
+.funding-hero .btn-outline:hover{
+  background:#d4a437 !important;
+  color:#111 !important;
+}
+.service-page-nav{
+  position:relative;
+  z-index:10;
+  background:#141419;
+  border-top:3px solid rgba(200,150,42,.35);
+  padding:1.1rem 3.2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+}
+
+.service-logo{
+  display:flex;
+  flex-direction:column;
+  color:#fff;
+}
+
+.service-logo strong{
+  font-family:var(--font-d);
+  font-size:1.35rem;
+  line-height:1;
+}
+
+.service-logo span{
+  color:var(--gold2);
+  font-size:.58rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  margin-top:.25rem;
+}
+
+.service-page-nav nav{
+  display:flex;
+  align-items:center;
+  gap:1.4rem;
+}
+
+.service-page-nav nav a{
+  color:rgba(255,255,255,.65);
+  font-size:.88rem;
+  font-weight:600;
+}
+
+.service-page-nav nav a:hover{
+  color:#fff;
+}
+
+.service-enquire{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#fff!important;
+  padding:.8rem 1.4rem;
+  border-radius:7px;
+  box-shadow:0 10px 28px rgba(200,150,42,.25);
+}
+
+@media(max-width:768px){
+  .service-page-nav{
+    padding:1rem 1.2rem;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .service-page-nav nav{
+    width:100%;
+    flex-wrap:wrap;
+    gap:.9rem;
+  }
+
+  .service-enquire{
+    width:100%;
+    text-align:center;
+  }
+}
+/* FUNDING HERO PREMIUM STYLE */
+
+.funding-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top left,
+      rgba(212,162,43,.18),
+      transparent 28%),
+
+    radial-gradient(circle at top right,
+      rgba(0,180,255,.12),
+      transparent 30%),
+
+    radial-gradient(circle at bottom right,
+      rgba(0,255,170,.10),
+      transparent 35%),
+
+    linear-gradient(
+      135deg,
+      #0a0a10 0%,
+      #11111a 35%,
+      #06151d 70%,
+      #0b2b2a 100%
+    );
+
+  padding:8rem 0 6rem;
+}
+
+.funding-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,.02),
+      transparent
+    );
+  pointer-events:none;
+}
+
+.funding-hero .website-hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:950px;
+  margin:auto;
+  text-align:center;
+}
+
+.funding-hero h1{
+  color:#fff;
+}
+
+.funding-hero p{
+  color:rgba(255,255,255,.72);
+}
+
+.funding-hero .website-price-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(212,162,43,.35);
+  backdrop-filter:blur(10px);
+}
+
+.funding-hero .website-price-card span{
+  color:rgba(255,255,255,.72);
+}
+
+.funding-hero .website-price-card strong{
+  color:var(--gold2);
+}
+
+.funding-hero .website-price-card small{
+  color:rgba(255,255,255,.55);
+}
+
+.funding-hero .btn-outline{
+  border:1px solid rgba(212,162,43,.65);
+  color:var(--gold2);
+  background:transparent;
+}
+
+.funding-hero .btn-outline:hover{
+  background:rgba(212,162,43,.12);
+}
+/* ======================================================
+   BUSINESS FUNDING HERO
+====================================================== */
+
+.funding-hero{
+  position:relative;
+  min-height:72vh;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at top left, rgba(200,150,42,.18), transparent 35%),
+    linear-gradient(135deg,#0e0e12 0%,#141419 52%,#0f4a52 120%);
+  color:#fff;
+  padding:9rem 0 5rem;
+  overflow:hidden;
+}
+
+.funding-hero::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  right:-180px;
+  top:-120px;
+  background:rgba(222,169,58,.08);
+  filter:blur(6px);
+}
+
+.funding-hero .website-hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.funding-hero h1{
+  color:#fff;
+  font-size:clamp(2.6rem,6vw,5.2rem);
+  margin:.8rem 0 1.2rem;
+}
+
+.funding-hero p{
+  color:rgba(255,255,255,.68);
+  max-width:680px;
+  margin:0 auto 2rem;
+  font-size:1.05rem;
+}
+
+.funding-hero .website-price-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(222,169,58,.32);
+  color:#fff;
+}
+
+.funding-hero .website-price-card span{
+  color:rgba(255,255,255,.68);
+}
+
+.funding-hero .website-price-card small{
+  color:rgba(255,255,255,.5);
+}
+
+.funding-hero .website-price-card strong{
+  color:#f0c44a;
+}
+
+@media(max-width:768px){
+
+  .funding-hero{
+    padding:7rem 0 4rem;
+    min-height:auto;
+  }
+
+  .funding-hero h1{
+    font-size:clamp(2.2rem,9vw,4rem);
+  }
+
+}
+/* FORCE BUSINESS FUNDING HERO DARK */
+body .funding-hero,
+body section.funding-hero,
+body .website-hero.funding-hero{
+  background:
+    radial-gradient(circle at top left, rgba(200,150,42,.18), transparent 35%),
+    linear-gradient(135deg,#0e0e12 0%,#141419 52%,#0f4a52 120%) !important;
+  color:#fff !important;
+}
+
+body .funding-hero h1{
+  color:#fff !important;
+}
+
+body .funding-hero p{
+  color:rgba(255,255,255,.68) !important;
+}
+
+body .funding-hero .website-price-card{
+  background:rgba(255,255,255,.08) !important;
+  border:1px solid rgba(222,169,58,.32) !important;
+}
+
+body .funding-hero .website-price-card span,
+body .funding-hero .website-price-card small{
+  color:rgba(255,255,255,.65) !important;
+}
+
+body .funding-hero .website-price-card strong{
+  color:#f0c44a !important;
+}

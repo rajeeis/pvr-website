@@ -335,9 +335,9 @@ function calculateIncome() {
   if (!currentRent || currentRent < 300) { alert('Please enter your current monthly rent (min £300).'); return; }
   const locMult = {london:2.8,edinburgh:2.5,manchester:2.2,bristol:1.9,birmingham:1.75}[location] || 2.0;
   const bedsMult= {studio:.75,'1':1,'2':1.4,'3':1.8,'4':2.2,'5':2.6}[beds] || 1.4;
-  const typeMult= {apartment:1,studio:.75,Balconyd:1.08,house:1.15,detached:1.25}[type] || 1;
+  const typeMult= {apartment:1,studio:.75,terraced:1.08,house:1.15,detached:1.25}[type] || 1;
   const saGross = Math.round(currentRent * locMult * (typeMult*.5+.5) * (bedsMult*.3+.7));
-  const mgmtFee = Math.round(saGross * .15);
+  const mgmtFee = Math.round(saGross * .10);
   const saNet   = saGross - mgmtFee;
   const uplift  = Math.round(((saNet - currentRent) / currentRent) * 100);
   const fmt = n => '£' + n.toLocaleString('en-GB');
@@ -400,23 +400,248 @@ function renderEvents(city) {
   renderEvents('london');
 })();
 
-/* ── Forms ───────────────────────────────────────────────────── */
+/* ── Forms: send enquiries to WhatsApp ─────────────────────── */
 (function initForms() {
-  function handleForm(formId, successId) {
-    const form = document.getElementById(formId);
-    const suc  = document.getElementById(successId);
-    if (!form) return;
-    form.addEventListener('submit', e => {
+  const WA_NUMBER = CONFIG.WHATSAPP_NUMBER || "447459150439";
+
+  function openWhatsApp(message) {
+    window.open(
+      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  }
+
+  const agentForm = document.getElementById("agentForm");
+
+  if (agentForm) {
+    agentForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      const btn = form.querySelector('[type=submit]');
-      if (btn) { btn.textContent='Sending…'; btn.disabled=true; }
-      setTimeout(() => { form.style.display='none'; if(suc) suc.style.display='block'; }, 900);
+
+      const required = ["aAgentName", "aAgency", "aEmail", "aPhone", "aAddress"];
+
+      for (const id of required) {
+        const field = document.getElementById(id);
+        if (field && !field.value.trim()) {
+          field.focus();
+          alert("Please complete all required fields.");
+          return;
+        }
+      }
+
+      const whatsappMessage =
+`New Property Submission - PVR Groups Ltd
+
+Agent Name: ${document.getElementById("aAgentName")?.value || ""}
+Agency: ${document.getElementById("aAgency")?.value || ""}
+Email: ${document.getElementById("aEmail")?.value || ""}
+Phone: ${document.getElementById("aPhone")?.value || ""}
+
+Property Address / Postcode:
+${document.getElementById("aAddress")?.value || ""}
+
+Monthly Rent Expectation: ${document.getElementById("aRent")?.value || ""}
+Bedrooms: ${document.getElementById("aBeds")?.value || ""}
+Available From: ${document.getElementById("aAvailable")?.value || ""}
+Landlord Open to Company Let: ${document.getElementById("aOpenLet")?.value || ""}
+
+Image Links / Notes:
+${document.getElementById("aImages")?.value || ""}
+
+Additional Information:
+${document.getElementById("aMsg")?.value || ""}`;
+
+      openWhatsApp(whatsappMessage);
     });
   }
-  ['contactForm','landlordForm','agentForm','corporateForm','enquiryForm'].forEach((id,i) =>
-    handleForm(id, id.replace('Form','Success')));
+
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("cName")?.value || "";
+      const email = document.getElementById("cEmail")?.value || "";
+      const phone = document.getElementById("cPhone")?.value || "";
+      const enquiry = document.getElementById("cEnquiry")?.value || "";
+      const message = document.getElementById("cMessage")?.value || "";
+
+      if (!name.trim() || !email.trim() || !message.trim()) {
+        alert("Please complete your name, email and message.");
+        return;
+      }
+
+      const whatsappMessage =
+`New Website Enquiry - PVR Groups Ltd
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Enquiry Type: ${enquiry}
+
+Message:
+${message}`;
+
+      openWhatsApp(whatsappMessage);
+    });
+  }
 })();
 
+/* ── Universal WhatsApp Links ───────────────────────────────── */
+(function initWhatsAppLinks() {
+  const WA_NUMBER = CONFIG.WHATSAPP_NUMBER || "447459150439";
+
+  document.addEventListener("click", function(e) {
+    const waLink = e.target.closest("[data-whatsapp], .wa-btn");
+    if (!waLink) return;
+
+    e.preventDefault();
+
+    const message =
+      waLink.getAttribute("data-whatsapp") ||
+      "Hello PVR Groups Ltd, I would like to make an enquiry.";
+
+    window.open(
+      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  });
+})();
+
+/* ── Exit Intent Popup ──────────────────────────────────────── */
+(function initExitPopup() {
+  const WA_NUMBER = CONFIG.WHATSAPP_NUMBER || "447459150439";
+  let pvrPopupCooldown = false;
+
+  function openWhatsApp(message) {
+    window.open(
+      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  }
+
+  function createExitPopup() {
+    if (document.getElementById("pvrExitPopup")) return;
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      #pvrExitPopup{
+        position:fixed;inset:0;z-index:999999;
+        background:rgba(14,14,18,.82);
+        backdrop-filter:blur(10px);
+        display:none;align-items:center;justify-content:center;
+        padding:1.2rem;
+      }
+      #pvrExitPopup.show{display:flex;}
+      .pvr-exit-box{
+        width:min(560px,100%);
+        background:#141419;color:#fff;
+        border:1px solid rgba(200,150,42,.35);
+        border-radius:18px;padding:2.2rem;
+        position:relative;text-align:center;
+        box-shadow:0 25px 80px rgba(0,0,0,.55);
+      }
+      .pvr-exit-close{
+        position:absolute;top:1rem;right:1rem;
+        background:none;border:none;color:rgba(255,255,255,.55);
+        font-size:2rem;cursor:pointer;
+      }
+      .pvr-exit-label{
+        display:inline-block;color:#dea93a;
+        border:1px solid rgba(200,150,42,.45);
+        border-radius:50px;padding:.35rem 1rem;
+        font-size:.7rem;letter-spacing:.16em;
+        text-transform:uppercase;font-weight:700;
+        margin-bottom:1rem;
+      }
+      .pvr-exit-box h3{
+        font-family:'Playfair Display',Georgia,serif;
+        font-size:clamp(1.6rem,3vw,2.1rem);
+        margin-bottom:.8rem;line-height:1.15;
+      }
+      .pvr-exit-box p{
+        color:rgba(255,255,255,.65);
+        line-height:1.7;margin-bottom:1.4rem;
+      }
+      .pvr-exit-wa{
+        width:100%;border:none;border-radius:8px;
+        background:linear-gradient(135deg,#c8962a,#dea93a);
+        color:#fff;padding:1rem 1.2rem;
+        font-weight:800;cursor:pointer;font-size:1rem;
+      }
+      .pvr-exit-skip{
+        margin-top:1rem;background:none;border:none;
+        color:rgba(255,255,255,.5);
+        cursor:pointer;font-weight:600;
+      }
+    `;
+
+    document.head.appendChild(style);
+
+    const popup = document.createElement("div");
+    popup.id = "pvrExitPopup";
+    popup.innerHTML = `
+      <div class="pvr-exit-box">
+        <button class="pvr-exit-close" type="button">×</button>
+        <div class="pvr-exit-label">Before You Go</div>
+        <h3>Need Help With Stays, Property or Investment?</h3>
+        <p>Speak directly with PVR Groups Ltd for accommodation, company lets, landlord services, property management or investor partnerships.</p>
+        <button class="pvr-exit-wa" type="button">Message Us on WhatsApp →</button>
+        <button class="pvr-exit-skip" type="button">Continue browsing</button>
+      </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    popup.querySelector(".pvr-exit-close").onclick = closePopup;
+    popup.querySelector(".pvr-exit-skip").onclick = closePopup;
+
+    popup.querySelector(".pvr-exit-wa").onclick = function() {
+      openWhatsApp("Hello PVR Groups Ltd, I was viewing your website and would like to speak with someone.");
+      closePopup();
+    };
+
+    popup.addEventListener("click", function(e) {
+      if (e.target === popup) closePopup();
+    });
+  }
+
+  function showPopup() {
+    createExitPopup();
+    const popup = document.getElementById("pvrExitPopup");
+    if (popup && !popup.classList.contains("show")) {
+      popup.classList.add("show");
+    }
+  }
+
+  function closePopup() {
+    const popup = document.getElementById("pvrExitPopup");
+    if (popup) popup.classList.remove("show");
+  }
+
+  document.addEventListener("mouseleave", function(e) {
+    if (e.clientY > 0) return;
+    if (pvrPopupCooldown) return;
+
+    showPopup();
+    pvrPopupCooldown = true;
+
+    setTimeout(() => {
+      pvrPopupCooldown = false;
+    }, 10000);
+  });
+
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden && !pvrPopupCooldown) {
+      showPopup();
+      pvrPopupCooldown = true;
+
+      setTimeout(() => {
+        pvrPopupCooldown = false;
+      }, 10000);
+    }
+  });
+})();
 /* =========================================================
    PVR UNIVERSAL WHATSAPP + EXIT POPUP
    Shows every time user tries to leave
@@ -543,12 +768,46 @@ function renderEvents(city) {
     const popup = document.getElementById("pvrExitPopup");
     if (popup) popup.classList.remove("show");
   }
+// =========================================================
+// UNIVERSAL EXIT POPUP TRIGGER (FIXED)
+// =========================================================
 
-  document.addEventListener("mouseleave", function (e) {
-    if (e.clientY <= 0) {
-      showPopup();
-    }
-  });
+let pvrPopupCooldown = false;
 
-  document.addEventListener("DOMContentLoaded", createExitPopup);
+document.addEventListener("mouseleave", function (e) {
+
+  // Trigger only when cursor leaves top of page
+  if (e.clientY > 0) return;
+
+  // Prevent spam
+  if (pvrPopupCooldown) return;
+
+  // Show popup
+  showPopup();
+
+  // 10 second cooldown before it can show again
+  pvrPopupCooldown = true;
+
+  setTimeout(() => {
+    pvrPopupCooldown = false;
+  }, 10000);
+
+});
+
+// Also trigger when switching tabs
+document.addEventListener("visibilitychange", function () {
+
+  if (document.hidden && !pvrPopupCooldown) {
+
+    showPopup();
+
+    pvrPopupCooldown = true;
+
+    setTimeout(() => {
+      pvrPopupCooldown = false;
+    }, 10000);
+
+  }
+
+});
 })();
