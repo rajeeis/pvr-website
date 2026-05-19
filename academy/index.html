@@ -439,6 +439,24 @@
   </div>
 </section>
 
+<!-- LEARNING DISCLAIMER -->
+<section class="academy-disclaimer" aria-labelledby="learning-disclaimer-heading">
+  <div class="c">
+    <div class="academy-disclaimer-inner fade-up">
+      <div>
+        <div class="ey">Responsible Learning</div>
+        <h2 id="learning-disclaimer-heading">Important Learning Disclaimer</h2>
+        <p>This academy is for educational purposes only. PVR Groups Ltd does not guarantee income, profit, finance approval, deal completion, or investment results. Students are responsible for their own due diligence, compliance checks, and professional advice before making any property or investment decision.</p>
+      </div>
+      <div class="academy-trust-points" aria-label="Academy trust points">
+        <div>Educational training only</div>
+        <div>Practical UK property examples</div>
+        <div>Compliance-first approach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer style="background:#141419;color:rgba(255,255,255,.42);padding:1.6rem 0;text-align:center;font-size:.8rem;">
   <div class="c">
@@ -518,6 +536,13 @@
 .academy-countdown div{min-height:86px;border:1px solid rgba(222,169,58,.24);border-radius:var(--r);background:rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;justify-content:center}
 .academy-countdown strong{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:.4rem}
 .academy-countdown span{font-family:var(--font-d);font-size:1.8rem;color:var(--gold2);line-height:1}
+.academy-disclaimer{background:#0f0f14;padding:4.5rem 0;border-top:1px solid rgba(222,169,58,.16)}
+.academy-disclaimer-inner{display:grid;grid-template-columns:1.35fr .9fr;gap:3rem;align-items:center;border:1px solid rgba(222,169,58,.2);border-radius:var(--r2);background:linear-gradient(135deg,rgba(255,255,255,.035),rgba(15,74,82,.12));box-shadow:0 24px 70px rgba(0,0,0,.22);padding:2.4rem}
+.academy-disclaimer h2{color:#fff;margin:.65rem 0 1rem}
+.academy-disclaimer p{color:rgba(255,255,255,.56);font-size:.94rem;line-height:1.85}
+.academy-trust-points{display:grid;gap:.85rem}
+.academy-trust-points div{border:1px solid rgba(222,169,58,.2);border-radius:var(--r);background:rgba(255,255,255,.045);color:rgba(255,255,255,.78);padding:.95rem 1rem;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.academy-trust-points div::before{content:'✓';color:var(--gold2);font-weight:900;margin-right:.55rem}
 
 /* ── Modules Grid ──────────────────────────────────────────── */
 .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
@@ -626,6 +651,7 @@ body.lead-modal-active{overflow:hidden}
   .academy-urgency-inner{grid-template-columns:1fr;padding:1.7rem;gap:1.5rem}
   .academy-countdown{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
   .academy-countdown div{min-height:74px}
+  .academy-disclaimer-inner{grid-template-columns:1fr;padding:1.7rem;gap:1.5rem}
   .pricing-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
