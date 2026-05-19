@@ -53,12 +53,14 @@
         <div class="nav-dropdown">
           <a href="../index.html#management">Services ▾</a>
           <div class="dropdown-menu">
+            <a href="../academy/" class="nav-link-academy">Deal Sourcing Academy</a>
             <a href="../services/serviced-accommodation.html">SA Management</a>
             <a href="../services/property-management.html">Guaranteed Rent for Landlords</a>
             <a href="../services/guaranteed-rent.html">Estate Agent Partnerships</a>
             <a href="../services/corporate-lets.html">Corporate Accommodation</a>
             <a href="../services/investor-partnerships.html">Investor Partnerships</a>
-            <a href="../academy/">Deal Sourcing Academy</a>
+            <a href="../services/business-funding-support.html">Business Funding Support</a>
+            <a href="../services/website-development.html">Website Development</a>
           </div>
         </div>
         <a href="../index.html#journal">Journal</a>
@@ -82,12 +84,14 @@
   <a href="../index.html#stays">Stays</a>
   <a href="../index.html#locations">Locations</a>
   <a href="../index.html#management">Services</a>
+  <a href="../academy/" class="nav-link-academy">Deal Sourcing Academy</a>
   <a href="../services/serviced-accommodation.html">SA Management</a>
   <a href="../services/property-management.html">Guaranteed Rent for Landlords</a>
   <a href="../services/guaranteed-rent.html">Estate Agent Partnerships</a>
   <a href="../services/corporate-lets.html">Corporate Accommodation</a>
   <a href="../services/investor-partnerships.html">Investor Partnerships</a>
-  <a href="../academy/">Deal Sourcing Academy</a>
+  <a href="../services/business-funding-support.html">Business Funding Support</a>
+  <a href="../services/website-development.html">Website Development</a>
   <a href="../index.html#journal">Journal</a>
   <a href="../index.html#about">About</a>
   <a href="../index.html#contact">Contact</a>
@@ -393,7 +397,7 @@
 .module-card{background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:2.2rem 1.8rem;transition:var(--t);position:relative;overflow:hidden}
 .module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
 .module-card:hover{border-color:var(--border2);box-shadow:0 12px 48px rgba(14,14,18,.15);transform:translateY(-4px)}
-.module-number{position:absolute;top:1.2rem;right:1.5rem;font-family:var(--font-d);font-size:2.4rem;color:rgba(200,150,42,.08);font-weight:700}
+.module-number{position:absolute;top:1.2rem;right:1.5rem;font-family:var(--font-d);font-size:2.4rem;color:rgba(200,150,42,.22);font-weight:700}
 .module-icon{font-size:2.2rem;margin-bottom:.8rem}
 .module-card h3{color:var(--teal);margin-bottom:.8rem;font-size:1.1rem}
 .module-card p{font-size:.88rem;color:var(--text);margin-bottom:1.2rem;line-height:1.7}
@@ -446,6 +450,13 @@
 .delay-4{animation-delay:.4s}.delay-5{animation-delay:.5s}.delay-6{animation-delay:.6s}
 .delay-7{animation-delay:.7s}
 
+/* ── Active Navigation State ────────────────────────────────── */
+.nav-link-academy.active{color:var(--gold2)!important}
+
+/* ── Academy Benefits Cards (Light Background Override) ────── */
+section.s.bg-ivory .why-card h4{color:var(--teal)}
+section.s.bg-ivory .why-card p{color:var(--text)}
+
 /* ── Responsive ────────────────────────────────────────────── */
 @media(max-width:768px){
   .pricing-grid{grid-template-columns:1fr}
@@ -459,7 +470,7 @@
 
 <!-- Nav Script (shared from main site) -->
 <script>
-const hamburger=document.getElementById('hamburger');const mobNav=document.getElementById('mobNav');const mobClose=document.getElementById('mobClose');const nav=document.getElementById('nav');hamburger?.addEventListener('click',()=>{mobNav.classList.toggle('open');hamburger.setAttribute('aria-expanded',mobNav.classList.contains('open'))});mobClose?.addEventListener('click',()=>{mobNav.classList.remove('open');hamburger.setAttribute('aria-expanded','false')});document.addEventListener('click',(e)=>{if(!e.target.closest('#nav')&&!e.target.closest('.mob-nav')){mobNav.classList.remove('open')}});window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>100)});document.querySelectorAll('.btn[data-tier]').forEach(btn=>{btn.addEventListener('click',()=>{alert('Payment system coming soon. Thank you for your interest!')})})
+const hamburger=document.getElementById('hamburger');const mobNav=document.getElementById('mobNav');const mobClose=document.getElementById('mobClose');const nav=document.getElementById('nav');hamburger?.addEventListener('click',()=>{mobNav.classList.toggle('open');hamburger.setAttribute('aria-expanded',mobNav.classList.contains('open'))});mobClose?.addEventListener('click',()=>{mobNav.classList.remove('open');hamburger.setAttribute('aria-expanded','false')});document.addEventListener('click',(e)=>{if(!e.target.closest('#nav')&&!e.target.closest('.mob-nav')){mobNav.classList.remove('open')}});window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>100)});document.querySelectorAll('.btn[data-tier]').forEach(btn=>{btn.addEventListener('click',()=>{alert('Payment system coming soon. Thank you for your interest!')})});if(window.location.pathname.includes('/academy/')){document.querySelectorAll('.nav-link-academy').forEach(link=>{link.classList.add('active')})}
 </script>
 
 </body>
