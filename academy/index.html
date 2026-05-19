@@ -130,6 +130,30 @@
   </div>
 </section>
 
+<!-- SOCIAL PROOF COUNTERS -->
+<section class="academy-proof" aria-label="Academy social proof">
+  <div class="c">
+    <div class="academy-proof-grid">
+      <div class="academy-proof-item fade-up">
+        <strong>100+</strong>
+        <span>Property Deals Reviewed</span>
+      </div>
+      <div class="academy-proof-item fade-up delay-1">
+        <strong>50+</strong>
+        <span>Investment Analyses</span>
+      </div>
+      <div class="academy-proof-item fade-up delay-2">
+        <strong>Real</strong>
+        <span>UK Market Strategies</span>
+      </div>
+      <div class="academy-proof-item fade-up delay-3">
+        <strong>Live</strong>
+        <span>Case Studies</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BENEFITS SECTION -->
 <section class="s bg-ivory" aria-labelledby="benefits-heading">
   <div class="c">
@@ -210,6 +234,24 @@
   </div>
 </section>
 
+<!-- LIMITED EARLY ACCESS -->
+<section class="academy-urgency" aria-labelledby="early-access-heading">
+  <div class="c">
+    <div class="academy-urgency-inner fade-up">
+      <div>
+        <div class="ey">Priority Launch Window</div>
+        <h2 id="early-access-heading">Limited Early Access</h2>
+        <p>Priority members will receive first access, bonus worksheets and launch pricing.</p>
+      </div>
+      <div class="academy-countdown" aria-label="Countdown placeholder">
+        <div><strong>Days</strong><span>--</span></div>
+        <div><strong>Hours</strong><span>--</span></div>
+        <div><strong>Minutes</strong><span>--</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING SECTION -->
 <section id="pricing" class="s bg-ivory" aria-labelledby="pricing-heading">
   <div class="c">
@@ -280,6 +322,22 @@
       <details class="faq-item fade-up">
         <summary>Who is this academy for?</summary>
         <div class="faq-content">The academy is designed for property investors, estate agents, developers, and anyone interested in mastering deal sourcing. No prior experience is required — we start from fundamentals and progress to advanced scenarios.</div>
+      </details>
+      <details class="faq-item fade-up delay-1">
+        <summary>Do I need property experience?</summary>
+        <div class="faq-content">No. The academy is structured to start with core deal sourcing foundations, then build toward more advanced investment analysis and deal packaging.</div>
+      </details>
+      <details class="faq-item fade-up delay-2">
+        <summary>Are templates included?</summary>
+        <div class="faq-content">Yes. Templates and worksheets are included to help you review opportunities, structure your analysis and present deals more professionally.</div>
+      </details>
+      <details class="faq-item fade-up delay-3">
+        <summary>Is support included?</summary>
+        <div class="faq-content">Support depends on the access tier. Priority members will be notified first when full launch details and support options are confirmed.</div>
+      </details>
+      <details class="faq-item fade-up delay-4">
+        <summary>Can I access future updates?</summary>
+        <div class="faq-content">Yes. Academy access is designed to include future updates so members can keep learning as strategies, templates and case studies evolve.</div>
       </details>
       <details class="faq-item fade-up delay-1">
         <summary>What's the time commitment?</summary>
@@ -444,6 +502,23 @@
      STYLES SPECIFIC TO ACADEMY
 ══════════════════════════════════════════════════════════════ -->
 <style>
+/* -- Social Proof & Early Access ------------------------------ */
+.academy-proof{background:#141419;border-top:1px solid rgba(200,150,42,.16);border-bottom:1px solid rgba(200,150,42,.16);padding:2rem 0}
+.academy-proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.academy-proof-item{padding:0 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.academy-proof-item:last-child{border-right:0}
+.academy-proof-item strong{display:block;font-family:var(--font-d);font-size:clamp(1.65rem,3vw,2.45rem);line-height:1;color:var(--gold2);margin-bottom:.45rem}
+.academy-proof-item span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.48);line-height:1.55}
+.academy-urgency{background:linear-gradient(135deg,#141419 0%,#1a1a24 58%,#0f4a52 100%);padding:4.5rem 0;position:relative;overflow:hidden}
+.academy-urgency::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(222,169,58,.08),transparent 45%);pointer-events:none}
+.academy-urgency-inner{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;border:1px solid rgba(222,169,58,.24);border-radius:var(--r2);background:rgba(255,255,255,.035);box-shadow:0 28px 80px rgba(0,0,0,.24);padding:2.4rem}
+.academy-urgency h2{color:#fff;margin:.65rem 0 .75rem}
+.academy-urgency p{color:rgba(255,255,255,.56);max-width:560px}
+.academy-countdown{display:grid;grid-template-columns:repeat(3,88px);gap:.75rem}
+.academy-countdown div{min-height:86px;border:1px solid rgba(222,169,58,.24);border-radius:var(--r);background:rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.academy-countdown strong{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:.4rem}
+.academy-countdown span{font-family:var(--font-d);font-size:1.8rem;color:var(--gold2);line-height:1}
+
 /* ── Modules Grid ──────────────────────────────────────────── */
 .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
 .module-card{background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:2.2rem 1.8rem;transition:var(--t);position:relative;overflow:hidden}
@@ -546,6 +621,11 @@ body.lead-modal-active{overflow:hidden}
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media(max-width:768px){
+  .academy-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 0}
+  .academy-proof-item:nth-child(2){border-right:0}
+  .academy-urgency-inner{grid-template-columns:1fr;padding:1.7rem;gap:1.5rem}
+  .academy-countdown{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+  .academy-countdown div{min-height:74px}
   .pricing-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
@@ -561,6 +641,8 @@ body.lead-modal-active{overflow:hidden}
 <!-- Nav Script (shared from main site) -->
 <script>
 const hamburger=document.getElementById('hamburger');const mobNav=document.getElementById('mobNav');const mobClose=document.getElementById('mobClose');const nav=document.getElementById('nav');hamburger?.addEventListener('click',()=>{mobNav.classList.toggle('open');hamburger.setAttribute('aria-expanded',mobNav.classList.contains('open'))});mobClose?.addEventListener('click',()=>{mobNav.classList.remove('open');hamburger.setAttribute('aria-expanded','false')});document.addEventListener('click',(e)=>{if(!e.target.closest('#nav')&&!e.target.closest('.mob-nav')){mobNav.classList.remove('open')}});window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>100)});if(window.location.pathname.includes('/academy/')){document.querySelectorAll('.nav-link-academy').forEach(link=>{link.classList.add('active')})}
+
+document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',event=>{const target=document.querySelector(link.getAttribute('href'));if(!target)return;event.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})})});
 
 const leadModal=document.getElementById('priorityAccessModal');
 const leadForm=document.getElementById('priorityAccessForm');
