@@ -252,6 +252,30 @@
   </div>
 </section>
 
+<!-- WHAT'S INCLUDED -->
+<section class="academy-included" aria-labelledby="included-heading">
+  <div class="c">
+    <div class="sh">
+      <div class="ey">What's Included</div>
+      <h2 id="included-heading">Built for Practical Deal Sourcing</h2>
+      <p>Everything is designed to help you understand, assess and present property opportunities with more confidence.</p>
+    </div>
+    <div class="academy-included-grid">
+      <div class="academy-included-item fade-up">Video lessons</div>
+      <div class="academy-included-item fade-up delay-1">Deal sourcing templates</div>
+      <div class="academy-included-item fade-up delay-2">Investor scripts</div>
+      <div class="academy-included-item fade-up delay-3">Property calculators</div>
+      <div class="academy-included-item fade-up delay-4">Real case studies</div>
+      <div class="academy-included-item fade-up delay-5">Future updates</div>
+    </div>
+    <div class="academy-trust-row" aria-label="Registration trust badges">
+      <span>Secure Registration</span>
+      <span>No Spam</span>
+      <span>Lifetime Updates</span>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING SECTION -->
 <section id="pricing" class="s bg-ivory" aria-labelledby="pricing-heading">
   <div class="c">
@@ -464,6 +488,8 @@
   </div>
 </footer>
 
+<button type="button" class="academy-floating-cta" data-open-lead>Join Priority Access</button>
+
 <!-- PRIORITY ACCESS MODAL -->
 <div class="lead-modal" id="priorityAccessModal" aria-hidden="true">
   <div class="lead-modal-backdrop" data-close-lead></div>
@@ -536,6 +562,14 @@
 .academy-countdown div{min-height:86px;border:1px solid rgba(222,169,58,.24);border-radius:var(--r);background:rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;justify-content:center}
 .academy-countdown strong{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:.4rem}
 .academy-countdown span{font-family:var(--font-d);font-size:1.8rem;color:var(--gold2);line-height:1}
+.academy-included{background:var(--ivory);padding:5rem 0}
+.academy-included-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.academy-included-item{background:#fff;border:1px solid rgba(200,150,42,.18);border-radius:var(--r2);box-shadow:var(--shadow);padding:1.25rem 1.35rem;color:var(--ink);font-size:.9rem;font-weight:700;transition:var(--t)}
+.academy-included-item::before{content:'✓';color:var(--gold);font-weight:900;margin-right:.6rem}
+.academy-included-item:hover{border-color:rgba(200,150,42,.34);box-shadow:var(--shadow2);transform:translateY(-3px)}
+.academy-trust-row{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+.academy-trust-row span{border:1px solid rgba(15,74,82,.18);border-radius:50px;background:#fff;color:var(--teal);padding:.55rem 1rem;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(14,14,18,.06)}
+.academy-trust-row span::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold2);margin-right:.55rem;vertical-align:middle}
 .academy-disclaimer{background:#0f0f14;padding:4.5rem 0;border-top:1px solid rgba(222,169,58,.16)}
 .academy-disclaimer-inner{display:grid;grid-template-columns:1.35fr .9fr;gap:3rem;align-items:center;border:1px solid rgba(222,169,58,.2);border-radius:var(--r2);background:linear-gradient(135deg,rgba(255,255,255,.035),rgba(15,74,82,.12));box-shadow:0 24px 70px rgba(0,0,0,.22);padding:2.4rem}
 .academy-disclaimer h2{color:#fff;margin:.65rem 0 1rem}
@@ -643,6 +677,9 @@ section.s.bg-ivory .why-card p{color:var(--text)}
 .lead-modal.submitted .lead-form{display:none}
 .lead-modal.submitted .lead-success{display:block;animation:fadeUp .38s ease both}
 body.lead-modal-active{overflow:hidden}
+.academy-floating-cta{position:fixed;right:1.35rem;bottom:1.35rem;z-index:1100;border:1px solid rgba(255,255,255,.16);border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;box-shadow:0 16px 48px rgba(14,14,18,.32),0 8px 28px rgba(200,150,42,.28);padding:.95rem 1.45rem;font-family:var(--font-b);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;animation:floatingCtaIn .65s ease .4s both;transition:var(--t)}
+.academy-floating-cta:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(14,14,18,.36),0 10px 34px rgba(200,150,42,.38);background:linear-gradient(135deg,var(--gold2),var(--gold3))}
+@keyframes floatingCtaIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media(max-width:768px){
@@ -651,7 +688,10 @@ body.lead-modal-active{overflow:hidden}
   .academy-urgency-inner{grid-template-columns:1fr;padding:1.7rem;gap:1.5rem}
   .academy-countdown{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
   .academy-countdown div{min-height:74px}
+  .academy-included-grid{grid-template-columns:1fr}
+  .academy-trust-row{justify-content:flex-start}
   .academy-disclaimer-inner{grid-template-columns:1fr;padding:1.7rem;gap:1.5rem}
+  .academy-floating-cta{left:1rem;right:1rem;bottom:1rem;width:calc(100% - 2rem);justify-content:center;padding:1rem 1.2rem}
   .pricing-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
