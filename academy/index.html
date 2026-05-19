@@ -447,8 +447,8 @@
     <div class="bdb-inner">
       <div>
         <div class="bdb-label">Ready to Master Deal Sourcing?</div>
-        <h2 style="color:#fff">Start Learning Today</h2>
-        <p style="color:rgba(255,255,255,.55);margin-bottom:1.5rem;">Choose your academy tier and get instant access to all course materials. Learn at your own pace with lifetime access.</p>
+        <h2 style="color:#fff">Join Priority Access</h2>
+        <p style="color:rgba(255,255,255,.55);margin-bottom:1.5rem;">Choose your academy tier and join the priority list for first access, launch pricing and future course updates.</p>
         <div class="bdb-benefits">
           <div class="bdb-benefit">Lifetime course access</div>
           <div class="bdb-benefit">Updated materials</div>
@@ -488,22 +488,27 @@
   </div>
 </footer>
 
-<button type="button" class="academy-floating-cta" data-open-lead>Join Priority Access</button>
+<div class="academy-floating-cta-wrap">
+  <span>No payment required today</span>
+  <button type="button" class="academy-floating-cta" data-open-lead>Join Priority Access</button>
+</div>
 
 <!-- PRIORITY ACCESS MODAL -->
 <div class="lead-modal" id="priorityAccessModal" aria-hidden="true">
   <div class="lead-modal-backdrop" data-close-lead></div>
-  <div class="lead-modal-panel" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+  <div class="lead-modal-panel" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle" aria-describedby="leadModalCopy">
     <button type="button" class="lead-modal-close" aria-label="Close priority access form" data-close-lead>×</button>
 
     <div class="lead-modal-kicker">Priority Access</div>
     <h2 id="leadModalTitle">Join the PVR Deal Sourcing Academy priority list</h2>
-    <p class="lead-modal-copy">Register your interest and we will notify you when access opens.</p>
+    <p class="lead-modal-copy" id="leadModalCopy">Register your interest and we will notify you when access opens.</p>
+    <p class="lead-payment-note">No payment required today.</p>
 
     <form class="lead-form" id="priorityAccessForm" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="6980dd27-411f-44b1-ad56-f989939c374c">
       <input type="hidden" name="source" value="PVR Deal Sourcing Academy">
       <input type="hidden" name="page" value="academy">
+      <input type="checkbox" name="botcheck" class="lead-botcheck" tabindex="-1" autocomplete="off">
 
       <div class="lead-field">
         <label for="leadName">Full Name</label>
@@ -655,7 +660,9 @@ section.s.bg-ivory .why-card p{color:var(--text)}
 .lead-modal-kicker{position:relative;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:.85rem}
 .lead-modal h2{position:relative;color:#fff;font-size:clamp(1.7rem,4vw,2.35rem);margin-bottom:.8rem}
 .lead-modal-copy{position:relative;color:rgba(255,255,255,.58);font-size:.96rem;margin-bottom:1.8rem}
+.lead-payment-note{position:relative;color:var(--gold2);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:-1rem 0 1.35rem}
 .lead-form{position:relative;display:grid;gap:1.15rem}
+.lead-botcheck{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
 .lead-field{display:flex;flex-direction:column;gap:.42rem}
 .lead-field label,.lead-options legend{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.52)}
 .lead-field label span{letter-spacing:.08em;color:rgba(255,255,255,.35)}
@@ -677,12 +684,17 @@ section.s.bg-ivory .why-card p{color:var(--text)}
 .lead-modal.submitted .lead-form{display:none}
 .lead-modal.submitted .lead-success{display:block;animation:fadeUp .38s ease both}
 body.lead-modal-active{overflow:hidden}
-.academy-floating-cta{position:fixed;right:1.35rem;bottom:1.35rem;z-index:1100;border:1px solid rgba(255,255,255,.16);border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;box-shadow:0 16px 48px rgba(14,14,18,.32),0 8px 28px rgba(200,150,42,.28);padding:.95rem 1.45rem;font-family:var(--font-b);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;animation:floatingCtaIn .65s ease .4s both;transition:var(--t)}
+.academy-floating-cta-wrap{position:fixed;right:1.35rem;bottom:1.35rem;z-index:1100;display:flex;flex-direction:column;align-items:center;gap:.35rem;animation:floatingCtaIn .65s ease .4s both}
+.academy-floating-cta-wrap span{color:rgba(255,255,255,.72);background:rgba(14,14,18,.82);border:1px solid rgba(222,169,58,.2);border-radius:50px;padding:.28rem .75rem;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.24)}
+.academy-floating-cta{border:1px solid rgba(255,255,255,.16);border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;box-shadow:0 16px 48px rgba(14,14,18,.32),0 8px 28px rgba(200,150,42,.28);padding:.95rem 1.45rem;font-family:var(--font-b);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;transition:var(--t)}
 .academy-floating-cta:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(14,14,18,.36),0 10px 34px rgba(200,150,42,.38);background:linear-gradient(135deg,var(--gold2),var(--gold3))}
+.btn:focus-visible,.academy-floating-cta:focus-visible,.lead-modal-close:focus-visible,.lead-field input:focus-visible,.lead-submit:focus-visible{outline:2px solid var(--gold3);outline-offset:3px}
+.lead-option-grid input:focus-visible+span{border-color:var(--gold3);box-shadow:0 0 0 3px rgba(240,196,74,.22)}
 @keyframes floatingCtaIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media(max-width:768px){
+  body{padding-bottom:6.2rem}
   .academy-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 0}
   .academy-proof-item:nth-child(2){border-right:0}
   .academy-urgency-inner{grid-template-columns:1fr;padding:1.7rem;gap:1.5rem}
@@ -691,7 +703,8 @@ body.lead-modal-active{overflow:hidden}
   .academy-included-grid{grid-template-columns:1fr}
   .academy-trust-row{justify-content:flex-start}
   .academy-disclaimer-inner{grid-template-columns:1fr;padding:1.7rem;gap:1.5rem}
-  .academy-floating-cta{left:1rem;right:1rem;bottom:1rem;width:calc(100% - 2rem);justify-content:center;padding:1rem 1.2rem}
+  .academy-floating-cta-wrap{left:1rem;right:1rem;bottom:1rem}
+  .academy-floating-cta{width:100%;justify-content:center;padding:1rem 1.2rem}
   .pricing-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
