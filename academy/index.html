@@ -244,9 +244,9 @@
         <p>Priority members will receive first access, bonus worksheets and launch pricing.</p>
       </div>
       <div class="academy-countdown" aria-label="Countdown placeholder">
-        <div><strong>Days</strong><span>--</span></div>
-        <div><strong>Hours</strong><span>--</span></div>
-        <div><strong>Minutes</strong><span>--</span></div>
+        <div><strong>Days</strong><span id="academyCountdownDays">--</span></div>
+        <div><strong>Hours</strong><span id="academyCountdownHours">--</span></div>
+        <div><strong>Minutes</strong><span id="academyCountdownMinutes">--</span></div>
       </div>
     </div>
   </div>
@@ -567,6 +567,7 @@
 .academy-countdown div{min-height:86px;border:1px solid rgba(222,169,58,.24);border-radius:var(--r);background:rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;justify-content:center}
 .academy-countdown strong{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:.4rem}
 .academy-countdown span{font-family:var(--font-d);font-size:1.8rem;color:var(--gold2);line-height:1}
+.academy-countdown-open{grid-column:1/-1;min-width:270px;color:var(--gold2);font-family:var(--font-d);font-size:1.35rem;text-align:center}
 .academy-included{background:var(--ivory);padding:5rem 0}
 .academy-included-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
 .academy-included-item{background:#fff;border:1px solid rgba(200,150,42,.18);border-radius:var(--r2);box-shadow:var(--shadow);padding:1.25rem 1.35rem;color:var(--ink);font-size:.9rem;font-weight:700;transition:var(--t)}
@@ -722,6 +723,27 @@ body.lead-modal-active{overflow:hidden}
 const hamburger=document.getElementById('hamburger');const mobNav=document.getElementById('mobNav');const mobClose=document.getElementById('mobClose');const nav=document.getElementById('nav');hamburger?.addEventListener('click',()=>{mobNav.classList.toggle('open');hamburger.setAttribute('aria-expanded',mobNav.classList.contains('open'))});mobClose?.addEventListener('click',()=>{mobNav.classList.remove('open');hamburger.setAttribute('aria-expanded','false')});document.addEventListener('click',(e)=>{if(!e.target.closest('#nav')&&!e.target.closest('.mob-nav')){mobNav.classList.remove('open')}});window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>100)});if(window.location.pathname.includes('/academy/')){document.querySelectorAll('.nav-link-academy').forEach(link=>{link.classList.add('active')})}
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',event=>{const target=document.querySelector(link.getAttribute('href'));if(!target)return;event.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})})});
+document.querySelectorAll('a[href="#pricing"]').forEach(link=>{link.addEventListener('click',event=>{const pricing=document.getElementById('pricing');if(!pricing)return;event.preventDefault();pricing.scrollIntoView({behavior:'smooth',block:'start'})})});
+
+const countdownDays=document.getElementById('academyCountdownDays');
+const countdownHours=document.getElementById('academyCountdownHours');
+const countdownMinutes=document.getElementById('academyCountdownMinutes');
+const countdownWrap=document.querySelector('.academy-countdown');
+const launchDeadline=new Date('2026-06-30T23:59:00+01:00').getTime();
+function updateAcademyCountdown(){
+  if(!countdownWrap||!countdownDays||!countdownHours||!countdownMinutes)return;
+  const distance=launchDeadline-Date.now();
+  if(distance<=0){
+    countdownWrap.innerHTML='<div class="academy-countdown-open">Priority access now open</div>';
+    return;
+  }
+  const totalMinutes=Math.floor(distance/60000);
+  countdownDays.textContent=String(Math.floor(totalMinutes/1440));
+  countdownHours.textContent=String(Math.floor((totalMinutes%1440)/60)).padStart(2,'0');
+  countdownMinutes.textContent=String(totalMinutes%60).padStart(2,'0');
+}
+updateAcademyCountdown();
+setInterval(updateAcademyCountdown,60000);
 
 const leadModal=document.getElementById('priorityAccessModal');
 const leadForm=document.getElementById('priorityAccessForm');
